@@ -1,7 +1,6 @@
 package com.example.shipbrowser.service;
 
 import com.example.shipbrowser.dao.*;
-import com.example.shipbrowser.model.OrphanedEntities;
 import com.example.shipbrowser.model.dto.DownloadedShipEntityDtoIn;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -49,12 +48,11 @@ public class ShipService {
         DownloadedShipEntityDtoIn[] shipsFromResponse = mapper.readValue(response, DownloadedShipEntityDtoIn[].class);
         List<Ship> newShips = new ArrayList<>();
         List<Ship> updatedShips = new ArrayList<>();
-        OrphanedEntities orphanedEntities = new OrphanedEntities();
         for (DownloadedShipEntityDtoIn responseShip : shipsFromResponse
         ) {
             if (shipMap.containsKey(responseShip.getId())) {
                 Ship updatedShip = shipMap.get(responseShip.getId());
-                mergeShipWithShipDtoIn(updatedShip, responseShip, orphanedEntities);
+                mergeShipWithShipDtoIn(updatedShip, responseShip);
                 updatedShips.add(updatedShip);
             } else if (responseShip.existsOnEn()) {
                 Ship newShip = responseShip.toEntity();
@@ -62,14 +60,10 @@ public class ShipService {
             }
         }
 
-        skinService.remove(orphanedEntities.getOrphanedSkins());
-        skillService.remove(orphanedEntities.getOrphanedSkills());
-        storedImageService.remove(orphanedEntities.getOrphanedImages());
-
         return null;
     }
 
-    private OrphanedEntities mergeShipWithShipDtoIn(Ship ship, DownloadedShipEntityDtoIn dtoIn, OrphanedEntities orphanedEntities) {
+    private void mergeShipWithShipDtoIn(Ship ship, DownloadedShipEntityDtoIn dtoIn) {
         // Returns list of changed images - so source can be deleted
         ship.setWikiUrl(dtoIn.getWikiUrl());
         ship.setName(dtoIn.getEnglishName());
@@ -78,9 +72,6 @@ public class ShipService {
         ship.setHullType(dtoIn.getHullType());
 
         if (ship.getThumbnail() == null || !Objects.equals(ship.getThumbnail().getOriginalSource(), dtoIn.getThumbnail())) {
-            if (ship.getThumbnail() != null) {
-                orphanedEntities.getOrphanedImages().add(ship.getThumbnail());
-            }
 
             StoredImage storedImage = new StoredImage();
             // Will have to sync later
@@ -89,8 +80,6 @@ public class ShipService {
         }
         ship.setRarity(dtoIn.getRarity());
         if (dtoIn.getSkills().size() == ship.getSkills().size() && dtoIn.getSkills().stream().allMatch((skill) -> ship.getSkills().stream().anyMatch(skill::equalsToEntity))) {
-            orphanedEntities.getOrphanedSkills().addAll(ship.getSkills());
-            orphanedEntities.getOrphanedImages().addAll(ship.getSkills().stream().map(Skill::getIcon).toList());
 
             ship.setSkills((dtoIn.getSkills().stream().map((skin) -> skin.toEntity(ship)).toList()));
         }
@@ -100,16 +89,10 @@ public class ShipService {
             ship.setConstructionTime(null);
         }
         if (dtoIn.getSkins().size() == ship.getSkins().size() && dtoIn.getSkins().stream().allMatch((skin) -> ship.getSkins().stream().anyMatch(skin::equalsToEntity))) {
-            orphanedEntities.getOrphanedSkills().addAll(ship.getSkills());
-            orphanedEntities.getOrphanedImages().addAll(ship.getSkins().stream().map(Skin::getImage).toList());
-            orphanedEntities.getOrphanedImages().addAll(ship.getSkins().stream().map(Skin::getChibi).toList());
-            orphanedEntities.getOrphanedImages().addAll(ship.getSkins().stream().map(Skin::getBackground).toList());
 
             ship.setSkills((dtoIn.getSkills().stream().map((skin) -> skin.toEntity(ship)).toList()));
         }
 
         ship.setSkins(dtoIn.getSkins().stream().map((skin) -> skin.toEntity(ship)).toList());
-
-        return orphanedEntities;
     }
 }
