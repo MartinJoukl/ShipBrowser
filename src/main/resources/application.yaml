@@ -2,7 +2,6 @@ server:
   port: 9000
   servlet:
     context-path: /api/v1
-
 logging:
   level:
     org.springframework.security: trace
@@ -18,7 +17,10 @@ spring:
     url: jdbc:postgresql://localhost:5444/ships
     username: admin
     password: topSecret
-
+  web:
+    resources:
+      static-locations:
+        "../storedImages"
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub

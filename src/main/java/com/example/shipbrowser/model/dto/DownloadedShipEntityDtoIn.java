@@ -1,12 +1,15 @@
 package com.example.shipbrowser.model.dto;
 
 import com.example.shipbrowser.dao.Ship;
+import com.example.shipbrowser.dao.StoredImage;
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Data
 public class DownloadedShipEntityDtoIn {
@@ -35,20 +38,34 @@ public class DownloadedShipEntityDtoIn {
         return exists.en;
     }
 
+    public String getEnglishName() {
+        return names.en;
+    }
+
     public Ship toEntity() {
         Ship ship = new Ship();
-        ship.setWikiUrl();
-        ship.setName();
-        ship.setShipClass();
-        ship.setNationality();
-        ship.setHullType();
-        ship.setThumbnail();
-        ship.setThumbnail();
-        ship.setRarity();
-        ship.setSkills();
-        ship.setConstructionTime();
-        ship.setSkins();
+        ship.setWikiUrl(wikiUrl);
+        ship.setName(names.en);
+        ship.setShipClass(shipClass);
+        ship.setNationality(nationality);
+        ship.setHullType(hullType);
+        StoredImage storedImage = new StoredImage();
+        // Will have to sync later
+        storedImage.setOriginalSource(thumbnail);
+        ship.setThumbnail(storedImage);
+        ship.setRarity(rarity);
+        ship.setSkills((skills.stream().map((skin) -> skin.toEntity(ship)).toList()));
+        try {
+            ship.setConstructionTime(ZonedDateTime.parse(construction.constructionTime));
+        } catch (Exception ex) {
+            ship.setConstructionTime(null);
+        }
+        ship.setSkins(skins.stream().map((skin) -> skin.toEntity(ship)).toList());
         return ship;
+    }
+
+    public String getConstructionTime() {
+        return construction.constructionTime;
     }
 
     @Data
