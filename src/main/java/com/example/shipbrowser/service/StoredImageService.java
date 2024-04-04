@@ -1,12 +1,40 @@
 package com.example.shipbrowser.service;
 
 import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.dao.StoredImageRepository;
 import org.springframework.stereotype.Service;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
+
+import static com.example.shipbrowser.model.Constants.IMAGES_BASE_LOCATION;
 
 @Service
 public class StoredImageService {
-    public void remove(List<StoredImage> orphanedImages) {
+    private StoredImageRepository storedImageRepository;
+    private HttpClient httpClient;
+
+    public StoredImageService(StoredImageRepository storedImageRepository, HttpClient httpClient) {
+        this.storedImageRepository = storedImageRepository;
+        this.httpClient = httpClient;
+    }
+
+    //https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Collab057/Summer_Vacation/chibi.png
+    public void downloadAllImagesToLocal() throws IOException {
+        List<StoredImage> notLocallySavedImages = storedImageRepository.getStoredImageByStoredLocation(null);
+        for (StoredImage notLocallySavedImage : notLocallySavedImages) {
+            String determinedImagePath = notLocallySavedImage.getOriginalSource().split("/images/")[1];
+
+            Path possibleImagePath = Path.of(IMAGES_BASE_LOCATION, determinedImagePath);
+            if (Files.exists(possibleImagePath)) {
+                notLocallySavedImage.setStoredLocation(possibleImagePath.toString());
+            } else {
+                byte[] imageBytes = httpClient.returnImageBytes(notLocallySavedImage.getOriginalSource());
+                Files.createDirectories(possibleImagePath.getParent());
+                Files.write(possibleImagePath, imageBytes);
+            }
+        }
     }
 }

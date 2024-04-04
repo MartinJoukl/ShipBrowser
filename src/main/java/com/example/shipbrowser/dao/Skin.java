@@ -2,6 +2,7 @@ package com.example.shipbrowser.dao;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.engine.internal.Cascade;
 
 @Entity
 @Data
@@ -13,12 +14,12 @@ public class Skin {
     @Column
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private StoredImage image;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private StoredImage background;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private StoredImage chibi;
 
     @ManyToOne

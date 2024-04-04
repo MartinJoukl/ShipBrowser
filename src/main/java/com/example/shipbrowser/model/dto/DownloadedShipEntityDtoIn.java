@@ -46,9 +46,12 @@ public class DownloadedShipEntityDtoIn {
         Ship ship = new Ship();
         ship.setWikiUrl(wikiUrl);
         ship.setName(names.en);
+        ship.setCode(names.getCode());
+        ship.setOriginalId(id);
         ship.setShipClass(shipClass);
         ship.setNationality(nationality);
         ship.setHullType(hullType);
+        ship.setObtainedFrom(obtainedFrom.obtainedFrom);
         StoredImage storedImage = new StoredImage();
         // Will have to sync later
         storedImage.setOriginalSource(thumbnail);

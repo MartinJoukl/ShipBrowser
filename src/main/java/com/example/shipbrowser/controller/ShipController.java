@@ -7,6 +7,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 public class ShipController {
 
@@ -17,7 +19,7 @@ public class ShipController {
     }
 
     @PutMapping("synchronizeShips")
-    public DtoOut synchronizeShips() throws JsonProcessingException {
+    public DtoOut synchronizeShips() throws IOException {
 
         shipService.synchronizeShipsWithRemote();
         return new synchronizeShipsDtoOut();

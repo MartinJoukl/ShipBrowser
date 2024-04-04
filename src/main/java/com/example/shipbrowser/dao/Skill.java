@@ -12,13 +12,13 @@ public class Skill {
     @ManyToOne
     private Ship ship;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private StoredImage icon;
 
     @Column
     private String name;
 
-    @Column
+    @Column(length = 1024)
     private String description;
 
     @Column

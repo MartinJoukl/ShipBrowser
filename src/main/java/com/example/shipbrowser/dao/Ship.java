@@ -35,17 +35,17 @@ public class Ship {
     private HullType hullType;
     @Column
     private Rarity rarity;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Skill> skills;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private StoredImage thumbnail;
 
     @Column
     private ZonedDateTime constructionTime;
-    @Column
+    @Column(length = 1024)
     private String obtainedFrom;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Skin> skins;
 }
