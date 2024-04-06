@@ -3,6 +3,7 @@ package com.example.shipbrowser.service;
 import com.example.shipbrowser.dao.StoredImage;
 import com.example.shipbrowser.dao.StoredImageRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -14,7 +15,7 @@ import static com.example.shipbrowser.model.Constants.IMAGES_BASE_LOCATION;
 @Service
 public class StoredImageService {
     private StoredImageRepository storedImageRepository;
-    private HttpClient httpClient;
+    private final HttpClient httpClient;
 
     public StoredImageService(StoredImageRepository storedImageRepository, HttpClient httpClient) {
         this.storedImageRepository = storedImageRepository;
@@ -30,11 +31,23 @@ public class StoredImageService {
             Path possibleImagePath = Path.of(IMAGES_BASE_LOCATION, determinedImagePath);
             if (Files.exists(possibleImagePath)) {
                 notLocallySavedImage.setStoredLocation(possibleImagePath.toString());
+                storedImageRepository.save(notLocallySavedImage);
             } else {
-                byte[] imageBytes = httpClient.returnImageBytes(notLocallySavedImage.getOriginalSource());
-                Files.createDirectories(possibleImagePath.getParent());
-                Files.write(possibleImagePath, imageBytes);
+                try {
+                    byte[] imageBytes = httpClient.returnImageBytes(notLocallySavedImage.getOriginalSource());
+                    Files.createDirectories(possibleImagePath.getParent());
+                    Files.write(possibleImagePath, imageBytes);
+                    storedImageRepository.save(notLocallySavedImage);
+                } catch (HttpClientErrorException e) {
+                    // probably null image
+                    //TODO - call with retry?
+                    System.out.println(e);
+                }
             }
         }
+    }
+
+    public List<StoredImage> saveImages(List<StoredImage> imagesToInsert) {
+        return storedImageRepository.saveAll(imagesToInsert);
     }
 }

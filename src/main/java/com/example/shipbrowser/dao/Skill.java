@@ -12,7 +12,8 @@ public class Skill {
     @ManyToOne
     private Ship ship;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
+    @JoinColumn(name = "icon_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private StoredImage icon;
 
     @Column

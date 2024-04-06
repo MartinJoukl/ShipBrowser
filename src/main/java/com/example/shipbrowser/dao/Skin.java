@@ -14,12 +14,15 @@ public class Skin {
     @Column
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
+    @JoinColumn(name = "image_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private StoredImage image;
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
+    @JoinColumn(name = "background_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private StoredImage background;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
+    @JoinColumn(name = "chibi_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private StoredImage chibi;
 
     @ManyToOne

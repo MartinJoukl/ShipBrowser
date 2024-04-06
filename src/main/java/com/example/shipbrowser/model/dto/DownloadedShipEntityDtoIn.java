@@ -58,11 +58,8 @@ public class DownloadedShipEntityDtoIn {
         ship.setThumbnail(storedImage);
         ship.setRarity(rarity);
         ship.setSkills((skills.stream().map((skin) -> skin.toEntity(ship)).toList()));
-        try {
-            ship.setConstructionTime(ZonedDateTime.parse(construction.constructionTime));
-        } catch (Exception ex) {
-            ship.setConstructionTime(null);
-        }
+        ship.setConstructionTime(construction.constructionTime);
+
         ship.setSkins(skins.stream().map((skin) -> skin.toEntity(ship)).toList());
         return ship;
     }

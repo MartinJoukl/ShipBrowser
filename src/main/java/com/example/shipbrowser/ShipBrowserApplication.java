@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ShipBrowserApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ShipBrowserApplication.class, args);
 	}
 
