@@ -2,6 +2,7 @@ package com.example.shipbrowser.model.dto;
 
 import com.example.shipbrowser.dao.Ship;
 import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -52,10 +53,7 @@ public class DownloadedShipEntityDtoIn {
         ship.setNationality(nationality);
         ship.setHullType(hullType);
         ship.setObtainedFrom(obtainedFrom.obtainedFrom);
-        StoredImage storedImage = new StoredImage();
-        // Will have to sync later
-        storedImage.setOriginalSource(thumbnail);
-        ship.setThumbnail(storedImage);
+        ship.setThumbnailLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(thumbnail));
         ship.setRarity(rarity);
         ship.setSkills((skills.stream().map((skin) -> skin.toEntity(ship)).toList()));
         ship.setConstructionTime(construction.constructionTime);

@@ -14,16 +14,13 @@ public class Skin {
     @Column
     private String name;
 
-    @ManyToOne()
-    @JoinColumn(name = "image_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-    private StoredImage image;
-    @ManyToOne()
-    @JoinColumn(name = "background_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-    private StoredImage background;
+    @Column
+    private String imageLink;
+    @Column
+    private String backgroundLink;
 
-    @ManyToOne()
-    @JoinColumn(name = "chibi_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-    private StoredImage chibi;
+    @Column
+    private String chibiLink;
 
     @ManyToOne
     private Ship ship;

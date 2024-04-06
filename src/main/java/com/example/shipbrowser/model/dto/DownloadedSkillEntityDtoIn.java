@@ -3,6 +3,7 @@ package com.example.shipbrowser.model.dto;
 import com.example.shipbrowser.dao.Ship;
 import com.example.shipbrowser.dao.Skill;
 import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import lombok.Data;
 
 import java.util.Objects;
@@ -18,16 +19,14 @@ public class DownloadedSkillEntityDtoIn {
         Skill skill = new Skill();
         skill.setColor(color);
         skill.setShip(ship);
-        StoredImage imageIcon = new StoredImage();
-        imageIcon.setOriginalSource(icon);
-        skill.setIcon(imageIcon);
+        skill.setIconLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(icon));
         skill.setName(names.en);
         skill.setDescription(description);
         return skill;
     }
 
     public boolean equalsToEntity(Skill skillEntity) {
-        return (icon == null && skillEntity.getIcon() == null || Objects.equals(icon, skillEntity.getIcon().getOriginalSource()))
+        return (icon == null && skillEntity.getIconLink() == null || Objects.equals(RemoteToLocalLinkCoverter.fromRemoteToLocal(icon), skillEntity.getIconLink()))
                 && Objects.equals(skillEntity.getColor(), color)
                 && Objects.equals(skillEntity.getName(), names.en)
                 && Objects.equals(skillEntity.getDescription(), description);

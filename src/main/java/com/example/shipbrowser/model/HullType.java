@@ -12,13 +12,14 @@ public enum HullType {
     LARGE_CRUISER("Large Cruiser"),
     MONITOR("Monitor"),
     BATTLECRUISER("Battlecruiser"),
-    AVIATION_BATTLESHIP("Aviation battleship"),
-    LIGHT_AIRCRAFT_CARRIER("Light aircraft carrier"),
+    AVIATION_BATTLESHIP("Aviation Battleship"),
+    LIGHT_AIRCRAFT_CARRIER("Light Carrier"),
     AIRCRAFT_CARRIER("Aircraft Carrier"),
-    REPAIR_SHIP("Repair Ship"),
+    REPAIR_SHIP("Repair"),
     MUNITION_SHIP("Munition Ship"),
     SUBMARINE("Submarine"),
-    SAILING_FRIGATE("Sailing Frigate");
+    SAILING_FRIGATE("Sailing Frigate"),
+    SUBMARINE_CARRIER("Submarine Carrier");
 
     private String name;
 

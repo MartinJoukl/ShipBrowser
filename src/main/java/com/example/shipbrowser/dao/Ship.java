@@ -38,9 +38,8 @@ public class Ship {
     @OneToMany(cascade = CascadeType.ALL)
     private List<Skill> skills;
 
-    @ManyToOne()
-    @JoinColumn(name = "thumbnail_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-    private StoredImage thumbnail;
+    @Column
+    private String thumbnailLink;
 
     @Column
     private String constructionTime;

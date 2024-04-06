@@ -12,9 +12,8 @@ public class Skill {
     @ManyToOne
     private Ship ship;
 
-    @ManyToOne()
-    @JoinColumn(name = "icon_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-    private StoredImage icon;
+    @Column
+    private String iconLink;
 
     @Column
     private String name;

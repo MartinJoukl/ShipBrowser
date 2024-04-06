@@ -4,6 +4,7 @@ import com.example.shipbrowser.dao.Ship;
 import com.example.shipbrowser.dao.Skill;
 import com.example.shipbrowser.dao.Skin;
 import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import lombok.Data;
 
 import java.util.Objects;
@@ -19,22 +20,16 @@ public class DownloadedSkinEntityDtoIn {
         Skin skin = new Skin();
         skin.setName(name);
         skin.setShip(ship);
-        StoredImage mainImage = new StoredImage();
-        mainImage.setOriginalSource(image);
-        skin.setImage(mainImage);
-        StoredImage backgroundImage = new StoredImage();
-        backgroundImage.setOriginalSource(background);
-        skin.setBackground(backgroundImage);
-        StoredImage chibiImage = new StoredImage();
-        chibiImage.setOriginalSource(chibi);
-        skin.setChibi(chibiImage);
+        skin.setImageLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(image));
+        skin.setBackgroundLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(background));
+        skin.setChibiLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(chibi));
         return skin;
     }
 
     public boolean equalsToEntity(Skin skinEntity) {
-        return (image == null && skinEntity.getImage() == null || Objects.equals(image, skinEntity.getImage().getOriginalSource()))
-                && (background == null && skinEntity.getBackground() == null || Objects.equals(background, skinEntity.getBackground().getOriginalSource()))
-                && (chibi == null && skinEntity.getChibi() == null || Objects.equals(chibi, skinEntity.getChibi().getOriginalSource())) &&
+        return (image == null && skinEntity.getImageLink() == null || Objects.equals(RemoteToLocalLinkCoverter.fromRemoteToLocal(image), skinEntity.getImageLink()))
+                && (background == null && skinEntity.getBackgroundLink() == null || Objects.equals(RemoteToLocalLinkCoverter.fromRemoteToLocal(background), skinEntity.getBackgroundLink()))
+                && (chibi == null && skinEntity.getChibiLink() == null || Objects.equals(RemoteToLocalLinkCoverter.fromRemoteToLocal(chibi), skinEntity.getChibiLink())) &&
                 Objects.equals(name, skinEntity.getName());
 
     }
