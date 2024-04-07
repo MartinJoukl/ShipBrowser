@@ -1,7 +1,7 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.dao.Skill;
-import com.example.shipbrowser.dao.SkillRepository;
+import com.example.shipbrowser.repository.Skill;
+import com.example.shipbrowser.repository.SkillRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

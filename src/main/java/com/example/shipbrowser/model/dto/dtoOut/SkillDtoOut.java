@@ -1,5 +1,5 @@
-package com.example.shipbrowser.model.dto;
-import com.example.shipbrowser.dao.Skill;
+package com.example.shipbrowser.model.dto.dtoOut;
+import com.example.shipbrowser.repository.Skill;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,16 +1,13 @@
-package com.example.shipbrowser.model.dto;
+package com.example.shipbrowser.model.dto.dtoIn;
 
-import com.example.shipbrowser.dao.Ship;
-import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.time.ZonedDateTime;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 public class DownloadedShipEntityDtoIn {

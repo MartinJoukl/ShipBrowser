@@ -1,7 +1,9 @@
 package com.example.shipbrowser.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import lombok.Getter;
 
+@Getter
 public enum Rarity {
     NORMAL("Normal"),
     RARE("Rare"),
@@ -11,20 +13,20 @@ public enum Rarity {
     DECISIVE("Decisive"),
     ULTRA_RARE("Ultra Rare");
 
-    private String name;
+    private final String name;
 
     Rarity(String name) {
         this.name = name;
     }
 
     @JsonCreator
-    public static Rarity forValues(String rarity) {
+    public static Rarity fromString(String rarity) {
         for (Rarity rarityValue : Rarity.values()) {
             if (rarityValue.name.equals(rarity)) {
                 return rarityValue;
             }
         }
 
-        return null;
+        throw new RuntimeException("Invalid rarity");
     }
 }

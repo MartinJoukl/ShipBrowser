@@ -1,6 +1,6 @@
-package com.example.shipbrowser.model.dto;
+package com.example.shipbrowser.model.dto.dtoOut;
 
-import com.example.shipbrowser.dao.Skin;
+import com.example.shipbrowser.repository.Skin;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,7 +1,7 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.dao.StoredImage;
-import com.example.shipbrowser.dao.StoredImageRepository;
+import com.example.shipbrowser.repository.StoredImage;
+import com.example.shipbrowser.repository.StoredImageRepository;
 import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;

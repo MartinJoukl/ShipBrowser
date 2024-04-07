@@ -1,16 +1,18 @@
-package com.example.shipbrowser.dao;
+package com.example.shipbrowser.repository;
 
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Ship {
 
     @Id
@@ -23,19 +25,28 @@ public class Ship {
     @Column
     private String wikiUrl;
     @Column
+    @NotNull
+    @NotBlank
     private String name;
 
     @Column
+    @NotNull
+    @NotBlank
     private String code;
     @Column
+    @NotNull
     private String shipClass;
     @Column
+    @NotNull
     private String nationality;
     @Column
+    @NotNull
     private HullType hullType;
     @Column
+    @NotNull
     private Rarity rarity;
     @OneToMany(cascade = CascadeType.ALL)
+    @NotNull
     private List<Skill> skills;
 
     @Column
@@ -47,5 +58,6 @@ public class Ship {
     private String obtainedFrom;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @NotNull
     private List<Skin> skins;
 }

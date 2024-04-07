@@ -45,7 +45,8 @@ public class RestConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http
-                .authorizeHttpRequests((authorize) -> authorize
+                .authorizeHttpRequests((authorize) -> authorize.requestMatchers(
+                                "listShips", "getShip").permitAll()
                         .anyRequest().authenticated()
                 )
                 .csrf((csrf) -> csrf.ignoringRequestMatchers("/login"))

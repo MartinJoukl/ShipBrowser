@@ -1,18 +1,16 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.dao.Ship;
-import com.example.shipbrowser.dao.ShipRepository;
+import com.example.shipbrowser.repository.Ship;
+import com.example.shipbrowser.repository.ShipRepository;
 import com.example.shipbrowser.model.Constants;
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.io.ResourceLoader;
-import org.springframework.web.client.RestClient;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

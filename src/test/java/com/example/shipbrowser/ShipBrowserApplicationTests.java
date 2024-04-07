@@ -1,6 +1,6 @@
 package com.example.shipbrowser;
 
-import com.example.shipbrowser.model.dto.DownloadedShipEntityDtoIn;
+import com.example.shipbrowser.model.dto.dtoIn.DownloadedShipEntityDtoIn;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

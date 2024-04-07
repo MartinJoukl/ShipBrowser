@@ -1,11 +1,14 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.dao.*;
+import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
+import com.example.shipbrowser.repository.*;
 import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
-import com.example.shipbrowser.model.dto.DownloadedShipEntityDtoIn;
+import com.example.shipbrowser.model.dto.dtoIn.DownloadedShipEntityDtoIn;
+import com.example.shipbrowser.model.dto.dtoIn.ListShipsDtoIn;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,6 +19,7 @@ import java.util.stream.Stream;
 
 import static com.example.shipbrowser.model.Constants.AZUR_API_SHIPGIRL_URL;
 import static com.example.shipbrowser.model.Constants.SHIPS_JSON;
+import static com.example.shipbrowser.repository.ShipSpecification.createFilterQuery;
 
 @Service
 public class ShipService {
@@ -115,5 +119,25 @@ public class ShipService {
         }
 
         ship.setConstructionTime(dtoIn.getConstructionTime());
+    }
+
+    public Optional<Ship> getShipById(long id) {
+        return shipRepository.findById(id);
+    }
+
+    public Page<Ship> listShips(ListShipsDtoIn dtoIn) {
+        ShipsSearchCriteria criteria;
+        PageInfoDtoIn pageInfoDtoIn;
+        if (dtoIn.getSearchCriteria() == null) {
+            criteria = new ShipsSearchCriteria();
+        } else {
+            criteria = dtoIn.getSearchCriteria().toDbCriteria();
+        }
+        if (dtoIn.getPageInfo() == null) {
+            pageInfoDtoIn = new PageInfoDtoIn();
+        } else {
+            pageInfoDtoIn = dtoIn.getPageInfo();
+        }
+        return shipRepository.findAll(createFilterQuery(criteria), PageRequest.of(pageInfoDtoIn.getPageIndex(), pageInfoDtoIn.getPageSize()));
     }
 }

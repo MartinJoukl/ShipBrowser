@@ -1,10 +1,6 @@
-package com.example.shipbrowser.model.dto;
+package com.example.shipbrowser.model.dto.dtoOut;
 
-import com.example.shipbrowser.dao.Ship;
-import com.example.shipbrowser.dao.Skill;
-import com.example.shipbrowser.dao.Skin;
-import com.example.shipbrowser.model.HullType;
-import com.example.shipbrowser.model.Rarity;
+import com.example.shipbrowser.repository.Ship;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ShipDtoOut {
+public class ShipDtoOut implements DtoOut {
     private Long id;
     private String originalId;
     private String wikiUrl;
@@ -20,8 +16,8 @@ public class ShipDtoOut {
     private String code;
     private String shipClass;
     private String nationality;
-    private HullType hullType;
-    private Rarity rarity;
+    private String hullType;
+    private String rarity;
     private List<SkillDtoOut> skills;
     private String thumbnailLink;
     private String constructionTime;
@@ -36,8 +32,8 @@ public class ShipDtoOut {
         this.code = ship.getCode();
         this.shipClass = ship.getShipClass();
         this.nationality = ship.getNationality();
-        this.hullType = ship.getHullType();
-        this.rarity = ship.getRarity();
+        this.hullType = ship.getHullType().getName();
+        this.rarity = ship.getRarity().getName();
         this.skills = ship.getSkills().stream().map(SkillDtoOut::new).toList();
         this.thumbnailLink = ship.getThumbnailLink();
         this.constructionTime = ship.getConstructionTime();

@@ -1,4 +1,4 @@
-package com.example.shipbrowser.dao;
+package com.example.shipbrowser.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

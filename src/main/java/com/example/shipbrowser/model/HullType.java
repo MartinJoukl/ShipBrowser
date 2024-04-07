@@ -1,11 +1,11 @@
 package com.example.shipbrowser.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 
+@Getter
 public enum HullType {
     DESTROYER("Destroyer"),
-    CARRIER("Aircraft Carrier"),
     BATTLESHIP("Battleship"),
     LIGHT_CRUISER("Light Cruiser"),
     HEAVY_CRUISER("Heavy Cruiser"),
@@ -21,20 +21,20 @@ public enum HullType {
     SAILING_FRIGATE("Sailing Frigate"),
     SUBMARINE_CARRIER("Submarine Carrier");
 
-    private String name;
+    private final String name;
 
     HullType(String name) {
         this.name = name;
     }
 
     @JsonCreator
-    public static HullType forValues(String hullType) {
+    public static HullType fromString(String hullType) {
         for (HullType hullTypeValue : HullType.values()) {
             if (hullTypeValue.name.equals(hullType)) {
                 return hullTypeValue;
             }
         }
 
-        return null;
+        throw new RuntimeException("Invalid hullType");
     }
 }

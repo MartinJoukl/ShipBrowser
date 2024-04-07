@@ -1,17 +1,22 @@
-package com.example.shipbrowser.dao;
+package com.example.shipbrowser.repository;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import org.hibernate.engine.internal.Cascade;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Skin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
+    @NotNull
+    @NotBlank
     private String name;
 
     @Column
@@ -23,5 +28,6 @@ public class Skin {
     private String chibiLink;
 
     @ManyToOne
+    @NotNull
     private Ship ship;
 }

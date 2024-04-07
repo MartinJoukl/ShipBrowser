@@ -1,9 +1,7 @@
-package com.example.shipbrowser.model.dto;
+package com.example.shipbrowser.model.dto.dtoIn;
 
-import com.example.shipbrowser.dao.Ship;
-import com.example.shipbrowser.dao.Skill;
-import com.example.shipbrowser.dao.Skin;
-import com.example.shipbrowser.dao.StoredImage;
+import com.example.shipbrowser.repository.Ship;
+import com.example.shipbrowser.repository.Skin;
 import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import lombok.Data;
 

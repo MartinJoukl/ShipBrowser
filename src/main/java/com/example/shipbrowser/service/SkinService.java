@@ -1,7 +1,7 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.dao.Skin;
-import com.example.shipbrowser.dao.SkinRepository;
+import com.example.shipbrowser.repository.Skin;
+import com.example.shipbrowser.repository.SkinRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
