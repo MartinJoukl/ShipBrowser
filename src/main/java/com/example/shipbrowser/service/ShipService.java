@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -138,6 +139,16 @@ public class ShipService {
         } else {
             pageInfoDtoIn = dtoIn.getPageInfo();
         }
-        return shipRepository.findAll(createFilterQuery(criteria), PageRequest.of(pageInfoDtoIn.getPageIndex(), pageInfoDtoIn.getPageSize()));
+        PageRequest pageRequest = PageRequest.of(pageInfoDtoIn.getPageIndex(), pageInfoDtoIn.getPageSize());
+        if (dtoIn.getSortCriteria() != null) {
+            for (Map.Entry<String, String> entry : dtoIn.getSortCriteria().entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                pageRequest = pageRequest.withSort(
+                        pageRequest.getSort().and(Sort.by(value.toUpperCase().equals(Sort.Direction.ASC.name()) ? Sort.Direction.ASC : Sort.Direction.DESC, key))
+                );
+            }
+        }
+        return shipRepository.findAll(createFilterQuery(criteria), pageRequest);
     }
 }

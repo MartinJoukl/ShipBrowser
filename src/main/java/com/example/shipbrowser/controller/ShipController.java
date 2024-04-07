@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -43,8 +44,8 @@ public class ShipController {
         return new ShipDtoOut(currentShip.get());
     }
 
-    @GetMapping("listShips")
-    public DtoOut listShips(@Valid ListShipsDtoIn dtoIn) {
+    @PostMapping("listShips")
+    public DtoOut listShips(@Valid @RequestBody ListShipsDtoIn dtoIn) {
         if (dtoIn.getPageInfo() == null) {
             dtoIn.setPageInfo(new PageInfoDtoIn(0, 20));
         }
