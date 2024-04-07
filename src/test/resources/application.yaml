@@ -1,0 +1,27 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /api/v1
+logging:
+  level:
+    org.springframework.security: trace
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa
+  web:
+    resources:
+      static-locations:
+        "../storedImages"
+jwt:
+  private.key: classpath:app.key
+  public.key: classpath:app.pub

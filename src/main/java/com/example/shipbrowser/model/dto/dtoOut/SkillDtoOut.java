@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SkillDtoOut {
+public class SkillDtoOut extends DtoOut{
     private String iconLink;
     private String name;
     private String description;

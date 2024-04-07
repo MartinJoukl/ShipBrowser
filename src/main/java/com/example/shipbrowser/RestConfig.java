@@ -48,10 +48,10 @@ public class RestConfig {
         http
                 .authorizeHttpRequests((authorize) -> authorize.
                         requestMatchers(
-                                "listShips", "getShip").permitAll()
+                                "listShips", "getShip","listSkins").permitAll()
                         .anyRequest().authenticated()
                 )
-                .csrf((csrf) -> csrf.ignoringRequestMatchers("/login","listShips"))
+                .csrf((csrf) -> csrf.ignoringRequestMatchers("/login","listShips","listSkins"))
                 .httpBasic(Customizer.withDefaults())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -60,4 +61,17 @@ public class Ship {
     @OneToMany(cascade = CascadeType.ALL)
     @NotNull
     private List<Skin> skins;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ship ship = (Ship) o;
+        return id.equals(ship.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

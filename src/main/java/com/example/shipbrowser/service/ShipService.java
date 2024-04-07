@@ -27,16 +27,11 @@ public class ShipService {
 
     private final ShipRepository shipRepository;
     private final HttpClient httpClient;
-    private final SkinService skinService;
-    private final SkillService skillService;
-
     private final StoredImageService storedImageService;
 
-    public ShipService(ShipRepository shipRepository, SkinService skinService, StoredImageService storedImageService, SkillService skillService, HttpClient httpClient) {
+    public ShipService(ShipRepository shipRepository, StoredImageService storedImageService, HttpClient httpClient) {
         this.shipRepository = shipRepository;
         this.httpClient = httpClient;
-        this.skinService = skinService;
-        this.skillService = skillService;
         this.storedImageService = storedImageService;
     }
 

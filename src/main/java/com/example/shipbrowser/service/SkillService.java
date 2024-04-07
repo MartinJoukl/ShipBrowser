@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class SkillService {
 
-    private SkillRepository skillRepository;
+    private final SkillRepository skillRepository;
 
     public SkillService(SkillRepository skillRepository) {
         this.skillRepository = skillRepository;
