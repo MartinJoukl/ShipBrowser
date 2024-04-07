@@ -1,5 +1,6 @@
 package com.example.shipbrowser.controller;
 
+import com.example.shipbrowser.model.dto.dtoIn.IdDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.ListShipsDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
 import com.example.shipbrowser.model.dto.dtoOut.DtoOut;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -51,5 +51,21 @@ public class ShipController {
         }
         Page<Ship> ships = shipService.listShips(dtoIn);
         return new ListShipsDtoOut(ships, dtoIn.getPageInfo());
+    }
+
+    @DeleteMapping("deleteShip")
+    public DtoOut deleteShip(@Valid @RequestBody IdDtoIn id) {
+        Optional<Ship> deletedShip = shipService.deleteShipById(id.getId());
+        if (deletedShip.isPresent()) {
+            return new ShipDtoOut(deletedShip.get());
+        } else {
+            return new DtoOut();
+        }
+    }
+
+    @DeleteMapping("dropShips")
+    public DtoOut dropShips() {
+        shipService.dropShips();
+        return new DtoOut();
     }
 }

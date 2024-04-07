@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class SyncShipDtoOut implements DtoOut {
+public class SyncShipDtoOut extends DtoOut {
     private String additionalMessage;
     private List<ShipDtoOut> itemList;
 

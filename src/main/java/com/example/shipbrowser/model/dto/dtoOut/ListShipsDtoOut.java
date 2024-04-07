@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ListShipsDtoOut implements DtoOut {
+public class ListShipsDtoOut extends DtoOut {
     private List<ShipDtoOut> itemList;
     private PageInfoDtoOut pageInfo;
 

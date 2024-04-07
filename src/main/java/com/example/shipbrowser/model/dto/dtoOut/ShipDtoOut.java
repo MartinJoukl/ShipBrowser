@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ShipDtoOut implements DtoOut {
+public class ShipDtoOut extends DtoOut {
     private Long id;
     private String originalId;
     private String wikiUrl;

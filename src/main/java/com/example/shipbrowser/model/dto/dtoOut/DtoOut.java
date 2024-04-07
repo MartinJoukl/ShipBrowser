@@ -1,4 +1,7 @@
 package com.example.shipbrowser.model.dto.dtoOut;
 
-public interface DtoOut {
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize
+public class DtoOut {
 }

@@ -149,6 +149,18 @@ public class ShipService {
                 );
             }
         }
+        //Add default sort
+        pageRequest = pageRequest.withSort(pageRequest.getSort().and(Sort.by(Sort.Direction.ASC, "id")));
         return shipRepository.findAll(createFilterQuery(criteria), pageRequest);
+    }
+
+    public Optional<Ship> deleteShipById(long id) {
+        Optional<Ship> deletedShip = shipRepository.findById(id);
+        shipRepository.deleteById(id);
+        return deletedShip;
+    }
+
+    public void dropShips() {
+        shipRepository.deleteAll();
     }
 }
