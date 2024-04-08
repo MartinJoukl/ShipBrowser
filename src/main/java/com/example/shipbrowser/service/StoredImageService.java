@@ -2,7 +2,6 @@ package com.example.shipbrowser.service;
 
 import com.example.shipbrowser.repository.StoredImage;
 import com.example.shipbrowser.repository.StoredImageRepository;
-import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -15,12 +14,15 @@ import java.util.Set;
 
 @Service
 public class StoredImageService {
-    private StoredImageRepository storedImageRepository;
+    private final StoredImageRepository storedImageRepository;
     private final HttpClient httpClient;
 
-    public StoredImageService(StoredImageRepository storedImageRepository, HttpClient httpClient) {
+    private final RemoteToLocalLinkCoverter remoteToLocalLinkCoverter;
+
+    public StoredImageService(StoredImageRepository storedImageRepository, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         this.storedImageRepository = storedImageRepository;
         this.httpClient = httpClient;
+        this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
     }
 
     //https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Collab057/Summer_Vacation/chibi.png
@@ -32,7 +34,7 @@ public class StoredImageService {
             Path possibleImagePath = Path.of(localLink);
             if (!Files.exists(possibleImagePath)) {
                 try {
-                    String remotePath = RemoteToLocalLinkCoverter.fromLocalToAzurApiImages(localLink);
+                    String remotePath = remoteToLocalLinkCoverter.fromLocalToAzurApiImages(localLink);
                     byte[] imageBytes = httpClient.returnImageBytes(remotePath);
                     Files.createDirectories(possibleImagePath.getParent());
                     Files.write(possibleImagePath, imageBytes);

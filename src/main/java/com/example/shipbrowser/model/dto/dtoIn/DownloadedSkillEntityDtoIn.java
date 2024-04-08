@@ -2,7 +2,7 @@ package com.example.shipbrowser.model.dto.dtoIn;
 
 import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.repository.Skill;
-import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
+import com.example.shipbrowser.service.RemoteToLocalLinkCoverter;
 import lombok.Data;
 
 import java.util.Objects;
@@ -14,18 +14,18 @@ public class DownloadedSkillEntityDtoIn {
     private String description;
     private String color;
 
-    public Skill toEntity(Ship ship) {
+    public Skill toEntity(Ship ship, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         Skill skill = new Skill();
         skill.setColor(color);
         skill.setShip(ship);
-        skill.setIconLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(icon));
+        skill.setIconLink(remoteToLocalLinkCoverter.fromRemoteToLocal(icon));
         skill.setName(names.en);
         skill.setDescription(description);
         return skill;
     }
 
-    public boolean equalsToEntity(Skill skillEntity) {
-        return (icon == null && skillEntity.getIconLink() == null || Objects.equals(RemoteToLocalLinkCoverter.fromRemoteToLocal(icon), skillEntity.getIconLink()))
+    public boolean equalsToEntity(Skill skillEntity, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
+        return (icon == null && skillEntity.getIconLink() == null || Objects.equals(remoteToLocalLinkCoverter.fromRemoteToLocal(icon), skillEntity.getIconLink()))
                 && Objects.equals(skillEntity.getColor(), color)
                 && Objects.equals(skillEntity.getName(), names.en)
                 && Objects.equals(skillEntity.getDescription(), description);

@@ -2,11 +2,11 @@ package com.example.shipbrowser.service;
 
 import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
 import com.example.shipbrowser.repository.*;
-import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
 import com.example.shipbrowser.model.dto.dtoIn.DownloadedShipEntityDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.ListShipsDtoIn;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -18,8 +18,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static com.example.shipbrowser.model.Constants.AZUR_API_SHIPGIRL_URL;
-import static com.example.shipbrowser.model.Constants.SHIPS_JSON;
 import static com.example.shipbrowser.repository.ShipSpecification.createFilterQuery;
 
 @Service
@@ -28,17 +26,23 @@ public class ShipService {
     private final ShipRepository shipRepository;
     private final HttpClient httpClient;
     private final StoredImageService storedImageService;
+    private final RemoteToLocalLinkCoverter remoteToLocalLinkCoverter;
 
-    public ShipService(ShipRepository shipRepository, StoredImageService storedImageService, HttpClient httpClient) {
+    @Value("${httpService.uri.azur-api-url}")
+    private String azurApiShipgirlUrl;
+    private String shipsJson = "/ships.json";
+
+    public ShipService(ShipRepository shipRepository, StoredImageService storedImageService, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         this.shipRepository = shipRepository;
         this.httpClient = httpClient;
         this.storedImageService = storedImageService;
+        this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
     }
 
     public List<Ship> synchronizeShipsWithRemote() throws IOException {
         List<Ship> shipsFromDao = shipRepository.findAll();
         Map<String, Ship> shipMap = shipsFromDao.stream().collect(Collectors.toMap(Ship::getOriginalId, Function.identity()));
-        String response = httpClient.performGet(AZUR_API_SHIPGIRL_URL + SHIPS_JSON);
+        String response = httpClient.performGet(azurApiShipgirlUrl + shipsJson);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false).configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -53,7 +57,7 @@ public class ShipService {
                 mergeShipWithShipDtoIn(updatedShip, responseShip);
                 updatedShips.add(updatedShip);
             } else if (responseShip.existsOnEn()) {
-                Ship newShip = responseShip.toEntity();
+                Ship newShip = responseShip.toEntity(remoteToLocalLinkCoverter);
                 newShips.add(newShip);
             }
         }
@@ -102,16 +106,16 @@ public class ShipService {
         ship.setNationality(dtoIn.getNationality());
         ship.setHullType(dtoIn.getHullType());
 
-        if (ship.getThumbnailLink() == null || !Objects.equals(ship.getThumbnailLink(), RemoteToLocalLinkCoverter.fromRemoteToLocal(dtoIn.getThumbnail()))) {
-            ship.setThumbnailLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(dtoIn.getThumbnail()));
+        if (ship.getThumbnailLink() == null || !Objects.equals(ship.getThumbnailLink(), remoteToLocalLinkCoverter.fromRemoteToLocal(dtoIn.getThumbnail()))) {
+            ship.setThumbnailLink(remoteToLocalLinkCoverter.fromRemoteToLocal(dtoIn.getThumbnail()));
         }
         ship.setRarity(dtoIn.getRarity());
-        if (dtoIn.getSkins().size() == ship.getSkins().size() && dtoIn.getSkins().stream().allMatch((skin) -> ship.getSkins().stream().anyMatch(skin::equalsToEntity))) {
-            ship.setSkins(dtoIn.getSkins().stream().map((skin) -> skin.toEntity(ship)).collect(Collectors.toCollection(ArrayList::new)));
+        if (dtoIn.getSkins().size() == ship.getSkins().size() && dtoIn.getSkins().stream().allMatch((skin) -> ship.getSkins().stream().anyMatch((skinEntity -> skin.equalsToEntity(skinEntity, remoteToLocalLinkCoverter))))) {
+            ship.setSkins(dtoIn.getSkins().stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).collect(Collectors.toCollection(ArrayList::new)));
         }
 
-        if (dtoIn.getSkills().size() == ship.getSkills().size() && dtoIn.getSkills().stream().allMatch((skill) -> ship.getSkills().stream().anyMatch(skill::equalsToEntity))) {
-            ship.setSkills((dtoIn.getSkills().stream().map((skin) -> skin.toEntity(ship)).collect(Collectors.toCollection(ArrayList::new))));
+        if (dtoIn.getSkills().size() == ship.getSkills().size() && dtoIn.getSkills().stream().allMatch((skill) -> ship.getSkills().stream().anyMatch((skinEntity) -> skill.equalsToEntity(skinEntity, remoteToLocalLinkCoverter)))) {
+            ship.setSkills((dtoIn.getSkills().stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).collect(Collectors.toCollection(ArrayList::new))));
         }
 
         ship.setConstructionTime(dtoIn.getConstructionTime());

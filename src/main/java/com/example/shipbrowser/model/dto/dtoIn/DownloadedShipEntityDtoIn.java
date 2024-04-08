@@ -1,7 +1,7 @@
 package com.example.shipbrowser.model.dto.dtoIn;
 
 import com.example.shipbrowser.repository.Ship;
-import com.example.shipbrowser.helpers.RemoteToLocalLinkCoverter;
+import com.example.shipbrowser.service.RemoteToLocalLinkCoverter;
 import com.example.shipbrowser.model.HullType;
 import com.example.shipbrowser.model.Rarity;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -40,7 +40,7 @@ public class DownloadedShipEntityDtoIn {
         return names.en;
     }
 
-    public Ship toEntity() {
+    public Ship toEntity(RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         Ship ship = new Ship();
         ship.setWikiUrl(wikiUrl);
         ship.setName(names.en);
@@ -50,12 +50,12 @@ public class DownloadedShipEntityDtoIn {
         ship.setNationality(nationality);
         ship.setHullType(hullType);
         ship.setObtainedFrom(obtainedFrom.obtainedFrom);
-        ship.setThumbnailLink(RemoteToLocalLinkCoverter.fromRemoteToLocal(thumbnail));
+        ship.setThumbnailLink(remoteToLocalLinkCoverter.fromRemoteToLocal(thumbnail));
         ship.setRarity(rarity);
-        ship.setSkills((skills.stream().map((skin) -> skin.toEntity(ship)).toList()));
+        ship.setSkills((skills.stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).toList()));
         ship.setConstructionTime(construction.constructionTime);
 
-        ship.setSkins(skins.stream().map((skin) -> skin.toEntity(ship)).toList());
+        ship.setSkins(skins.stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).toList());
         return ship;
     }
 

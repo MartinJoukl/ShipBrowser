@@ -7,15 +7,14 @@ import com.example.shipbrowser.model.dto.dtoIn.ListShipsSearchCriteriaDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
 import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.repository.ShipRepository;
-import com.example.shipbrowser.model.Constants;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.data.domain.Page;
-import org.springframework.util.Assert;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,11 +41,15 @@ class ShipServiceTest {
     @Autowired
     ShipRepository shipRepository;
 
+    @Value("${httpService.uri.azur-api-url}")
+    private String azurApiShipgirlUrl;
+
     @BeforeEach
     void setupTest() throws IOException {
         shipRepository.deleteAll();
         String shipData = resourceLoader.getResource("classpath:ships.json").getContentAsString(StandardCharsets.UTF_8);
-        when(httpClient.performGet(eq(Constants.AZUR_API_SHIPGIRL_URL + Constants.SHIPS_JSON))).thenReturn(shipData);
+        String shipsJson = "/ships.json";
+        when(httpClient.performGet(eq(azurApiShipgirlUrl + shipsJson))).thenReturn(shipData);
     }
 
     @Test
