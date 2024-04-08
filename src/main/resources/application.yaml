@@ -24,3 +24,6 @@ spring:
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub
+httpService:
+   uri:
+    azur-api-url: https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master

@@ -25,3 +25,6 @@ spring:
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub
+httpService:
+  uri:
+    azur-api-url: https://localAzurApiMockServer.mock
