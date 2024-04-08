@@ -27,4 +27,4 @@ jwt:
   public.key: classpath:app.pub
 httpService:
   uri:
-    azur-api-url: https://localAzurApiMockServer.mock
+    azur-api-url: http://localhost:65100
