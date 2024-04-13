@@ -29,6 +29,12 @@ public class Skin {
     @Column
     private String chibiLink;
 
+    @Column
+    private Integer cost;
+
+    @Column
+    private String category;
+
     @ManyToOne(optional = false)
     @NotNull
     private Ship ship;

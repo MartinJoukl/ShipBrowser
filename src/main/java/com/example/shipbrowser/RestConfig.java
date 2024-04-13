@@ -39,7 +39,7 @@ import java.util.Arrays;
  * @author Josh Cummings
  */
 @Configuration
-public class RestConfig{
+public class RestConfig {
 
     @Value("${jwt.public.key}")
     RSAPublicKey key;
@@ -53,11 +53,11 @@ public class RestConfig{
         http
                 .authorizeHttpRequests((authorize) -> authorize.
                         requestMatchers(
-                                "listShips", "getShip", "listSkins","getShipImage","listSkinsByShipId").permitAll()
-                        .requestMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                                "listShips", "getShip", "listSkins", "getShipImage", "listSkinsByShipId", "getSkinImage", "getSkinBackground", "getSkinChibi").permitAll()
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .csrf((csrf) -> csrf.ignoringRequestMatchers("/login", "listShips", "listSkins","getShipImage"))
+                .csrf((csrf) -> csrf.ignoringRequestMatchers("/login", "listShips", "listSkins", "getShipImage"))
                 .httpBasic(Customizer.withDefaults())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

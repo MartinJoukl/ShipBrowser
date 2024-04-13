@@ -1,7 +1,9 @@
 package com.example.shipbrowser.controller;
 
 import com.example.shipbrowser.repository.Ship;
+import com.example.shipbrowser.repository.Skin;
 import com.example.shipbrowser.service.ShipService;
+import com.example.shipbrowser.service.SkinService;
 import com.example.shipbrowser.service.StoredImageService;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
@@ -28,9 +30,11 @@ import java.util.Optional;
 public class ImageController {
     private StoredImageService storedImageService;
     private ShipService shipService;
+    private SkinService skinService;
 
-    public ImageController(StoredImageService storedImageService, ShipService shipService) {
+    public ImageController(StoredImageService storedImageService, ShipService shipService, SkinService skinService) {
         this.shipService = shipService;
+        this.skinService = skinService;
         this.storedImageService = storedImageService;
     }
 
@@ -43,6 +47,63 @@ public class ImageController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
             inputStream = storedImageService.getImage(ship.get().getThumbnailLink());
+        } catch (IOException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
+    @GetMapping(value = "getSkinImage", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<Resource> getSkinImage(@RequestParam long id) {
+        ByteArrayResource inputStream;
+        try {
+            Optional<Skin> skin = skinService.getBySkinId(id);
+            if (skin.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            inputStream = storedImageService.getImage(skin.get().getImageLink());
+        } catch (IOException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
+    @GetMapping(value = "getSkinBackground", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<Resource> getSkinBackground(@RequestParam long id) {
+        ByteArrayResource inputStream;
+        try {
+            Optional<Skin> skin = skinService.getBySkinId(id);
+            if (skin.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            inputStream = storedImageService.getImage(skin.get().getBackgroundLink());
+        } catch (IOException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
+    @GetMapping(value = "getSkinChibi", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<Resource> getSkinChibi(@RequestParam long id) {
+        ByteArrayResource inputStream;
+        try {
+            Optional<Skin> skin = skinService.getBySkinId(id);
+            if (skin.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            inputStream = storedImageService.getImage(skin.get().getChibiLink());
         } catch (IOException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }

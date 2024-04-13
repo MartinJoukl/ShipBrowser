@@ -41,7 +41,7 @@ public class ShipService {
         this.skinService = skinService;
     }
 
-    @Transactional()
+    @Transactional
     public List<Ship> synchronizeShipsWithRemote() throws IOException {
         List<Ship> shipsFromDao = shipRepository.findAll();
         Map<String, Ship> shipMap = shipsFromDao.stream().collect(Collectors.toMap(Ship::getOriginalId, Function.identity()));

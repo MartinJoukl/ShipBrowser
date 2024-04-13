@@ -13,10 +13,18 @@ public class DownloadedSkinEntityDtoIn {
     private String image;
     private String background;
     private String chibi;
+    private Info info;
 
     public Skin toEntity(Ship ship, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         Skin skin = new Skin();
-        skin.setName(name);
+        if (info == null || info.enClient == null || info.enClient.equals("Skin unavailable")) {
+            skin.setName(name);
+        } else {
+            skin.setName(info.enClient);
+        }
+        if (info != null) {
+            skin.setCost(info.cost);
+        }
         skin.setShip(ship);
         skin.setImageLink(remoteToLocalLinkCoverter.fromRemoteToLocal(image));
         skin.setBackgroundLink(remoteToLocalLinkCoverter.fromRemoteToLocal(background));
@@ -30,5 +38,11 @@ public class DownloadedSkinEntityDtoIn {
                 && (chibi == null && skinEntity.getChibiLink() == null || Objects.equals(remoteToLocalLinkCoverter.fromRemoteToLocal(chibi), skinEntity.getChibiLink())) &&
                 Objects.equals(name, skinEntity.getName());
 
+    }
+
+    @Data
+    private static class Info {
+        String enClient;
+        Integer cost;
     }
 }

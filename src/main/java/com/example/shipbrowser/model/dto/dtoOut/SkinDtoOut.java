@@ -10,9 +10,11 @@ public class SkinDtoOut extends DtoOut {
 
     private Long id;
     private String name;
+    private Integer cost;
 
     public SkinDtoOut(Skin skin) {
         this.name = skin.getName();
+        this.cost = skin.getCost();
         this.id = skin.getId();
     }
 }

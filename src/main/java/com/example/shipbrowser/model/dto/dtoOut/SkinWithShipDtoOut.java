@@ -7,17 +7,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SkinWithShipDtoOut extends DtoOut {
+    private Long id;
     private String name;
-    private String imageLink;
-    private String backgroundLink;
-    private String chibiLink;
+    private Integer cost;
     private ReducedShipDtoOut ship;
 
     public SkinWithShipDtoOut(Skin skin) {
+        this.id = skin.getId();
         this.name = skin.getName();
-        this.imageLink = skin.getImageLink();
-        this.backgroundLink = skin.getBackgroundLink();
-        this.chibiLink = skin.getChibiLink();
+        this.cost = skin.getCost();
         this.ship = new ReducedShipDtoOut(skin.getShip());
     }
 }
