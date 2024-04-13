@@ -1,9 +1,7 @@
 package com.example.shipbrowser.service;
 
-import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
+import com.example.shipbrowser.model.dto.dtoIn.*;
 import com.example.shipbrowser.repository.*;
-import com.example.shipbrowser.model.dto.dtoIn.DownloadedShipEntityDtoIn;
-import com.example.shipbrowser.model.dto.dtoIn.ListShipsDtoIn;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +21,8 @@ import static com.example.shipbrowser.repository.ShipSpecification.createFilterQ
 
 @Service
 public class ShipService {
-
+    private final SkinService skinService;
+    private final SkillService skillService;
     private final ShipRepository shipRepository;
     private final HttpClient httpClient;
     private final StoredImageService storedImageService;
@@ -33,14 +32,16 @@ public class ShipService {
     private String azurApiShipgirlUrl;
     private String shipsJson = "/ships.json";
 
-    public ShipService(ShipRepository shipRepository, StoredImageService storedImageService, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
+    public ShipService(ShipRepository shipRepository, StoredImageService storedImageService, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter, SkinService skinService, SkillService skillService) {
         this.shipRepository = shipRepository;
         this.httpClient = httpClient;
         this.storedImageService = storedImageService;
         this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
+        this.skillService = skillService;
+        this.skinService = skinService;
     }
 
-    @Transactional(timeout = 20)
+    @Transactional()
     public List<Ship> synchronizeShipsWithRemote() throws IOException {
         List<Ship> shipsFromDao = shipRepository.findAll();
         Map<String, Ship> shipMap = shipsFromDao.stream().collect(Collectors.toMap(Ship::getOriginalId, Function.identity()));
@@ -68,6 +69,9 @@ public class ShipService {
         List<Ship> mergedShips = Stream.concat(newShips.stream(), updatedShips.stream()).collect(Collectors.toCollection(ArrayList::new));
 
         Set<String> links = getAllImageLinks(mergedShips);
+
+        skinService.remove(skinsToDelete);
+        skillService.remove(skillsToDelete);
         mergedShips = shipRepository.saveAll(mergedShips);
 
         storedImageService.downloadAllImagesToLocal(links);
@@ -114,15 +118,50 @@ public class ShipService {
             ship.setThumbnailLink(remoteToLocalLinkCoverter.fromRemoteToLocal(dtoIn.getThumbnail()));
         }
         ship.setRarity(dtoIn.getRarity());
-        if (dtoIn.getSkins().size() == ship.getSkins().size() && dtoIn.getSkins().stream().allMatch((skin) -> ship.getSkins().stream().anyMatch((skinEntity -> skin.equalsToEntity(skinEntity, remoteToLocalLinkCoverter))))) {
-            ship.setSkins(dtoIn.getSkins().stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).collect(Collectors.toCollection(ArrayList::new)));
-        }
+        mergeSkins(ship, dtoIn, skinsToDelete);
 
-        if (dtoIn.getSkills().size() == ship.getSkills().size() && dtoIn.getSkills().stream().allMatch((skill) -> ship.getSkills().stream().anyMatch((skinEntity) -> skill.equalsToEntity(skinEntity, remoteToLocalLinkCoverter)))) {
-            ship.setSkills((dtoIn.getSkills().stream().map((skin) -> skin.toEntity(ship, remoteToLocalLinkCoverter)).collect(Collectors.toCollection(ArrayList::new))));
-        }
+        mergeSkills(ship, dtoIn, skillsToDelete);
 
         ship.setConstructionTime(dtoIn.getConstructionTime());
+    }
+
+    private void mergeSkins(Ship ship, DownloadedShipEntityDtoIn dtoIn, List<Skin> skinsToDelete) {
+        Map<String, Skin> skinNameToSkinMap = ship.getSkins().stream().collect(Collectors.toMap(Skin::getName, Function.identity()));
+        Map<String, DownloadedSkinEntityDtoIn> skinDtoNameToSkinMap = dtoIn.getSkins().stream().collect(Collectors.toMap(DownloadedSkinEntityDtoIn::getName, Function.identity()));
+        // Delete all not contained skins
+        List<Skin> currentSkinsToDelete = ship.getSkins().stream().filter((skin) -> !skinDtoNameToSkinMap.containsKey(skin.getName())).toList();
+        ship.getSkins().removeAll(currentSkinsToDelete);
+        skinsToDelete.addAll(currentSkinsToDelete);
+        for (var skinDtoIn : dtoIn.getSkins()) {
+            if (skinNameToSkinMap.containsKey(skinDtoIn.getName())) {
+                Skin skinEntity = skinNameToSkinMap.get(skinDtoIn.getName());
+                skinEntity.setChibiLink(remoteToLocalLinkCoverter.fromRemoteToLocal(skinDtoIn.getChibi()));
+                skinEntity.setBackgroundLink(remoteToLocalLinkCoverter.fromRemoteToLocal(skinDtoIn.getBackground()));
+                skinEntity.setImageLink(remoteToLocalLinkCoverter.fromRemoteToLocal(skinDtoIn.getImage()));
+            } else {
+                ship.getSkins().add(skinDtoIn.toEntity(ship, remoteToLocalLinkCoverter));
+            }
+        }
+    }
+
+    private void mergeSkills(Ship ship, DownloadedShipEntityDtoIn dtoIn, List<Skill> skillsToDelete) {
+        Map<String, Skill> skillNameToSkillMap = ship.getSkills().stream().collect(Collectors.toMap(skill -> skill.getName() + skill.getCnName(), Function.identity()));
+        Map<String, DownloadedSkillEntityDtoIn> skillDtoNameToSkillMap = dtoIn.getSkills().stream().collect(Collectors.toMap(SkillDtoIn -> SkillDtoIn.getEnName() + SkillDtoIn.getCnName(), Function.identity()));
+        // Delete all not contained skins
+        List<Skill> currentSkillsToDelete = ship.getSkills().stream().filter((skill) -> !skillDtoNameToSkillMap.containsKey(skill.getName() + skill.getCnName())).toList();
+        ship.getSkills().removeAll(currentSkillsToDelete);
+        skillsToDelete.addAll(currentSkillsToDelete);
+
+        for (var skillDtoIn : dtoIn.getSkills()) {
+            if (skillNameToSkillMap.containsKey(skillDtoIn.getEnName() + skillDtoIn.getCnName())) {
+                Skill skillEntity = skillNameToSkillMap.get(skillDtoIn.getEnName() + skillDtoIn.getCnName());
+                skillEntity.setIconLink(remoteToLocalLinkCoverter.fromRemoteToLocal(skillDtoIn.getIcon()));
+                skillEntity.setDescription(skillDtoIn.getDescription());
+                skillEntity.setColor(skillDtoIn.getColor());
+            } else {
+                ship.getSkills().add(skillDtoIn.toEntity(ship, remoteToLocalLinkCoverter));
+            }
+        }
     }
 
     public Optional<Ship> getShipById(long id) {
@@ -147,9 +186,7 @@ public class ShipService {
             for (Map.Entry<String, String> entry : dtoIn.getSortCriteria().entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                pageRequest = pageRequest.withSort(
-                        pageRequest.getSort().and(Sort.by(value.toUpperCase().equals(Sort.Direction.ASC.name()) ? Sort.Direction.ASC : Sort.Direction.DESC, key))
-                );
+                pageRequest = pageRequest.withSort(pageRequest.getSort().and(Sort.by(value.toUpperCase().equals(Sort.Direction.ASC.name()) ? Sort.Direction.ASC : Sort.Direction.DESC, key)));
             }
         }
         //Add default sort

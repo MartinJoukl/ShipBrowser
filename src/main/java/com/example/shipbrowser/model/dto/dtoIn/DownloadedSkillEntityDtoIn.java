@@ -21,18 +21,35 @@ public class DownloadedSkillEntityDtoIn {
         skill.setIconLink(remoteToLocalLinkCoverter.fromRemoteToLocal(icon));
         skill.setName(names.en);
         skill.setDescription(description);
+        skill.setCnName(names.cn);
         return skill;
+    }
+
+    public String getEnName() {
+        if (names == null) {
+            return null;
+        }
+        return names.en;
+    }
+
+    public String getCnName() {
+        if (names == null) {
+            return null;
+        }
+        return names.cn;
     }
 
     public boolean equalsToEntity(Skill skillEntity, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         return (icon == null && skillEntity.getIconLink() == null || Objects.equals(remoteToLocalLinkCoverter.fromRemoteToLocal(icon), skillEntity.getIconLink()))
                 && Objects.equals(skillEntity.getColor(), color)
                 && Objects.equals(skillEntity.getName(), names.en)
+                && Objects.equals(skillEntity.getName(), names.cn)
                 && Objects.equals(skillEntity.getDescription(), description);
     }
 
     @Data
     private static class DtoInNames {
         private String en;
+        private String cn;
     }
 }

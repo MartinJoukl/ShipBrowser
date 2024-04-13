@@ -27,6 +27,10 @@ public class Skill {
     @NotBlank
     private String name;
 
+    // Just for synchronization purposes... for example (Fate Simulation) and retrofit (Fate Simulation) is named same...
+    @Column
+    private String cnName;
+
     @Column(length = 1024)
     private String description;
 
