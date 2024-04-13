@@ -1,20 +1,29 @@
 package com.example.shipbrowser.controller;
 
-import com.example.shipbrowser.model.dto.dtoIn.ListShipsDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.ListSkinDtoIn;
 import com.example.shipbrowser.model.dto.dtoIn.PageInfoDtoIn;
 import com.example.shipbrowser.model.dto.dtoOut.*;
 import com.example.shipbrowser.model.exception.ObjectNotFoundById;
-import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.repository.Skin;
-import com.example.shipbrowser.service.ShipService;
 import com.example.shipbrowser.service.SkinService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(
+        origins = {
+                "http://localhost:3000",
+        },
+        methods = {
+                RequestMethod.OPTIONS,
+                RequestMethod.GET,
+                RequestMethod.PUT,
+                RequestMethod.DELETE,
+                RequestMethod.POST
+        })
 @RestController
 public class SkinController {
     private final SkinService skinService;
@@ -40,6 +49,12 @@ public class SkinController {
         }
         Page<Skin> skins = skinService.listSkins(dtoIn);
         return new ListSkinsDtoOut(skins, dtoIn.getPageInfo());
+    }
+
+    @GetMapping("listSkinsByShipId")
+    public DtoOut listSkinByShipId(@RequestParam long shipId) {
+        List<Skin> skins = skinService.listAllShipSkins(shipId);
+        return new ListShipSkinsByIdDtoOut(skins);
     }
 
 }

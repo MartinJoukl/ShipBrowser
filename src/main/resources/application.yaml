@@ -12,7 +12,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: validate
+      ddl-auto: create
   datasource:
     url: jdbc:postgresql://localhost:5444/ships
     username: admin
@@ -20,7 +20,7 @@ spring:
   web:
     resources:
       static-locations:
-        "../storedImages"
+        "../images"
 jwt:
   private.key: classpath:app.key
   public.key: classpath:app.pub

@@ -2,6 +2,7 @@ package com.example.shipbrowser.service;
 
 import com.example.shipbrowser.repository.StoredImage;
 import com.example.shipbrowser.repository.StoredImageRepository;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -9,6 +10,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Set;
 
@@ -50,5 +52,10 @@ public class StoredImageService {
 
     public List<StoredImage> saveImages(List<StoredImage> imagesToInsert) {
         return storedImageRepository.saveAll(imagesToInsert);
+    }
+
+    public ByteArrayResource getImage(String path) throws IOException {
+        return new ByteArrayResource(Files.readAllBytes(Paths.get(
+                path)));
     }
 }

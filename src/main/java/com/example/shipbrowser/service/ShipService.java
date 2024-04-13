@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.*;
@@ -39,6 +40,7 @@ public class ShipService {
         this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
     }
 
+    @Transactional(timeout = 20)
     public List<Ship> synchronizeShipsWithRemote() throws IOException {
         List<Ship> shipsFromDao = shipRepository.findAll();
         Map<String, Ship> shipMap = shipsFromDao.stream().collect(Collectors.toMap(Ship::getOriginalId, Function.identity()));
@@ -51,10 +53,12 @@ public class ShipService {
 
         List<Ship> newShips = new ArrayList<>();
         List<Ship> updatedShips = new ArrayList<>();
+        List<Skin> skinsToDelete = new ArrayList<>();
+        List<Skill> skillsToDelete = new ArrayList<>();
         for (DownloadedShipEntityDtoIn responseShip : shipsFromResponse) {
             if (shipMap.containsKey(responseShip.getId())) {
                 Ship updatedShip = shipMap.get(responseShip.getId());
-                mergeShipWithShipDtoIn(updatedShip, responseShip);
+                mergeShipWithShipDtoIn(updatedShip, responseShip, skinsToDelete, skillsToDelete);
                 updatedShips.add(updatedShip);
             } else if (responseShip.existsOnEn()) {
                 Ship newShip = responseShip.toEntity(remoteToLocalLinkCoverter);
@@ -98,7 +102,7 @@ public class ShipService {
         return links;
     }
 
-    private void mergeShipWithShipDtoIn(Ship ship, DownloadedShipEntityDtoIn dtoIn) {
+    private void mergeShipWithShipDtoIn(Ship ship, DownloadedShipEntityDtoIn dtoIn, List<Skin> skinsToDelete, List<Skill> skillsToDelete) {
         // Returns list of changed images - so source can be deleted
         ship.setWikiUrl(dtoIn.getWikiUrl());
         ship.setName(dtoIn.getEnglishName());

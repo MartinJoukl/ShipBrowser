@@ -29,7 +29,7 @@ public class Skin {
     @Column
     private String chibiLink;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @NotNull
     private Ship ship;
 

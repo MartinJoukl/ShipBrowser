@@ -1,0 +1,3680 @@
+[
+     {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Ayanami",
+        "id": "155",
+        "_gid": 30105,
+        "_sid": [
+            301051,
+            301052,
+            301053,
+            301054,
+            900040,
+            900243,
+            900360
+        ],
+        "_code": 155,
+        "names": {
+            "en": "Ayanami",
+            "code": "IJN Ayanami",
+            "cn": "绫波",
+            "jp": "綾波",
+            "kr": "아야나미",
+            "tw": "綾波"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            1,
+            4,
+            0,
+            4,
+            1,
+            1
+        ],
+        "class": "Fubuki (Ayanami subclass)",
+        "nationality": "Sakura Empire",
+        "hullType": "Destroyer",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/thumbnail.png",
+        "rarity": "Elite",
+        "stars": 5,
+        "stats": {
+            "baseStats": {
+                "health": "290",
+                "armor": "Light",
+                "reload": "78",
+                "luck": "36",
+                "firepower": "12",
+                "torpedo": "98",
+                "evasion": "72",
+                "speed": "45",
+                "antiair": "27",
+                "aviation": "0",
+                "oilConsumption": "2",
+                "accuracy": "67",
+                "antisubmarineWarfare": "50"
+            },
+            "level100": {
+                "health": "1623",
+                "armor": "Light",
+                "reload": "202",
+                "luck": "36",
+                "firepower": "62",
+                "torpedo": "484",
+                "evasion": "216",
+                "speed": "45",
+                "antiair": "133",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "179",
+                "antisubmarineWarfare": "191"
+            },
+            "level120": {
+                "health": "1798",
+                "armor": "Light",
+                "reload": "214",
+                "luck": "36",
+                "firepower": "65",
+                "torpedo": "509",
+                "evasion": "244",
+                "speed": "45",
+                "antiair": "146",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "201",
+                "antisubmarineWarfare": "203"
+            },
+            "level125Retrofit": {
+                "health": "2007",
+                "armor": "Light",
+                "reload": "231",
+                "luck": "36",
+                "firepower": "76",
+                "torpedo": "576",
+                "evasion": "271",
+                "speed": "48",
+                "antiair": "149",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "206",
+                "antisubmarineWarfare": "206"
+            },
+            "level125": {
+                "health": "1842",
+                "armor": "Light",
+                "reload": "216",
+                "luck": "36",
+                "firepower": "66",
+                "torpedo": "516",
+                "evasion": "251",
+                "speed": "45",
+                "antiair": "149",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "206",
+                "antisubmarineWarfare": "206"
+            },
+            "level120Retrofit": {
+                "health": "1963",
+                "armor": "Light",
+                "reload": "229",
+                "luck": "36",
+                "firepower": "75",
+                "torpedo": "569",
+                "evasion": "264",
+                "speed": "48",
+                "antiair": "146",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "201",
+                "antisubmarineWarfare": "203"
+            },
+            "level100Retrofit": {
+                "health": "1788",
+                "armor": "Light",
+                "reload": "217",
+                "luck": "36",
+                "firepower": "72",
+                "torpedo": "544",
+                "evasion": "236",
+                "speed": "48",
+                "antiair": "133",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "179",
+                "antisubmarineWarfare": "191"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 80,
+                "minEfficiency": 75,
+                "type": "DD Guns",
+                "max": 1,
+                "kaiEfficiency": 85
+            },
+            {
+                "maxEfficiency": 160,
+                "minEfficiency": 140,
+                "type": "Torpedoes",
+                "max": 2,
+                "kaiEfficiency": 165
+            },
+            {
+                "maxEfficiency": 75,
+                "minEfficiency": 70,
+                "type": "Anti-Air Guns",
+                "max": 1,
+                "kaiEfficiency": 75
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 4,
+            "torpedo": 32,
+            "aviation": 0,
+            "reload": 15
+        },
+        "scrapValue": {
+            "coin": 12,
+            "medal": 4
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/155/the_demon.png",
+                "names": {
+                    "en": "The Demon",
+                    "cn": "鬼神",
+                    "jp": "鬼神"
+                },
+                "description": "When firing main gun, 5% chance to increase own Torpedo stat by 30% (60%) for 12s (5s cooldown, starts on cooldown).",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/155/augment_module_the_demon.png",
+                "names": {
+                    "en": "(Augment Module) The Demon+",
+                    "cn": "鬼神+",
+                    "jp": "鬼神+"
+                },
+                "description": "Increases this ship's torpedo DMG dealt by 1% (10%). When this ship fires her Main Guns: 5.0% chance to increase this ship's TRP by 30% (60%) for 12s (5s cooldown between activations). When the battle starts: increases this ship's TRP by 50% (100%) for 8s; after this buff expires, decreases this ship's DMG taken by 3.5% (8%) until the battle ends.",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/155/demon_dancekai.png",
+                "names": {
+                    "en": "(Retrofit) Demon Dance",
+                    "cn": "鬼神演舞",
+                    "jp": "鬼神演舞"
+                },
+                "description": "Every 20s, 40% (70%) chance to increase own Evasion by 30% for 5s and release a powerful barrage while launching fast torpedoes in a helical pattern.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/155/all_out_assault.png",
+                "names": {
+                    "en": "All Out Assault",
+                    "cn": "专属弹幕-柚",
+                    "jp": "特殊弾幕-綾波"
+                },
+                "description": "Every 15 (10) times the main gun is fired, triggers All Out Assault - Ayanami I (II)",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Gains All Out Assault I",
+                "Torpedo Efficiency +5%"
+            ],
+            [
+                "Max Torpedo Capacity +1",
+                "Pre-Loaded Torpedo +1",
+                "Torpedo Efficiency +10%"
+            ],
+            [
+                "Upgrades All Out Assault I→II",
+                "All Weapon Efficiency +5%",
+                "Spread of normal torpedo launches reduced"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "torpedo"
+                }
+            },
+            "techPoints": {
+                "collection": 5,
+                "maxLimitBreak": 11,
+                "maxLevel": 8,
+                "total": 24
+            }
+        },
+        "retrofit": true,
+        "retrofitId": "3155",
+        "retrofitProjects": {
+            "A": {
+                "id": "Hull Improvement Ⅰ",
+                "attributes": [
+                    "\"Health\" +45"
+                ],
+                "materials": [
+                    "2x \"DestroyerT1BP\""
+                ],
+                "coins": 400,
+                "level": 1,
+                "levelBreakLevel": 0,
+                "levelBreakStars": "★★☆☆☆",
+                "recurrence": 1,
+                "require": []
+            },
+            "B": {
+                "id": "Evasion Enhancement Ⅰ",
+                "attributes": [
+                    "\"Evasion\" +5"
+                ],
+                "materials": [
+                    "3x \"DestroyerT1BP\""
+                ],
+                "coins": 600,
+                "level": 5,
+                "levelBreakLevel": 0,
+                "levelBreakStars": "★★☆☆☆",
+                "recurrence": 1,
+                "require": [
+                    "A"
+                ]
+            },
+            "C": {
+                "id": "Main Gun Improvement Ⅰ",
+                "attributes": [
+                    "Equip 1 Efficiency +5.0%"
+                ],
+                "materials": [
+                    "3x \"DestroyerT1BP\""
+                ],
+                "coins": 800,
+                "level": 20,
+                "levelBreakLevel": 1,
+                "levelBreakStars": "★★★☆☆",
+                "recurrence": 1,
+                "require": [
+                    "A"
+                ]
+            },
+            "D": {
+                "id": "Firepower Enhancement Ⅰ",
+                "attributes": [
+                    "\"Firepower\" +10"
+                ],
+                "materials": [
+                    "5x \"DestroyerT1BP\""
+                ],
+                "coins": 1000,
+                "level": 25,
+                "levelBreakLevel": 1,
+                "levelBreakStars": "★★★☆☆",
+                "recurrence": 1,
+                "require": [
+                    "C"
+                ]
+            },
+            "E": {
+                "id": "Torpedo Improvement Ⅰ",
+                "attributes": [
+                    "Equip 2 Efficiency +5.0%"
+                ],
+                "materials": [
+                    "3x \"DestroyerT2BP\""
+                ],
+                "coins": 1200,
+                "level": 35,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 1,
+                "require": [
+                    "C"
+                ]
+            },
+            "F": {
+                "id": "Torpedo Enhancement Ⅰ",
+                "attributes": [
+                    "\"Torpedo\" +10"
+                ],
+                "materials": [
+                    "2x \"DestroyerT2BP\""
+                ],
+                "coins": 1500,
+                "level": 40,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 1,
+                "require": [
+                    "E"
+                ]
+            },
+            "G": {
+                "id": "Motor Enhancement",
+                "attributes": [
+                    "Spd +3"
+                ],
+                "materials": [
+                    "5x \"DestroyerT2BP\""
+                ],
+                "coins": 1800,
+                "level": 50,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 1,
+                "require": [
+                    "E"
+                ]
+            },
+            "H": {
+                "id": "Reload Enhancement Ⅱ",
+                "attributes": [
+                    "\"Reload\" +5 / \"Reload\" +10"
+                ],
+                "materials": [
+                    "1 / 2x \"DestroyerT2BP\""
+                ],
+                "coins": 2000,
+                "level": 55,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 2,
+                "require": [
+                    "D",
+                    "G"
+                ]
+            },
+            "I": {
+                "id": "Hull Improvement Ⅱ",
+                "attributes": [
+                    "\"Health\" +45 / \"Health\" +75"
+                ],
+                "materials": [
+                    "1 / 1x \"DestroyerT3BP\""
+                ],
+                "coins": 2500,
+                "level": 70,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 2,
+                "require": [
+                    "G"
+                ]
+            },
+            "J": {
+                "id": "Torpedo Enhancement Ⅱ",
+                "attributes": [
+                    "\"Torpedo\" +5 / \"Torpedo\" +15"
+                ],
+                "materials": [
+                    "1 / 2x \"DestroyerT3BP\"",
+                    "5 / 15x \"TorpT3Plate\""
+                ],
+                "coins": 3000,
+                "level": 75,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 2,
+                "require": [
+                    "F",
+                    "I"
+                ]
+            },
+            "K": {
+                "id": "Modernization",
+                "attributes": [
+                    "\"Torpedo\" +30",
+                    "\"Evasion\" +15"
+                ],
+                "materials": [
+                    "3x \"DestroyerT3BP\"",
+                    "1x \"Ayanami\" or \"Universal Bulin\""
+                ],
+                "coins": 4000,
+                "level": 85,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 1,
+                "require": [
+                    "I",
+                    "J"
+                ]
+            },
+            "L": {
+                "id": "Tactical Learning",
+                "attributes": [
+                    "Unlock Skill \"Demon Dance\""
+                ],
+                "materials": [
+                    "2x \"DestroyerT3BP\"",
+                    "20x \"TorpT3Plate\""
+                ],
+                "coins": 3000,
+                "level": 90,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 1,
+                "require": [
+                    "H",
+                    "K"
+                ]
+            }
+        },
+        "retrofitHullType": "Destroyer",
+        "construction": {
+            "constructionTime": "00:23:00",
+            "availableIn": {
+                "light": "CN/EN: Collection Unlock",
+                "heavy": false,
+                "aviation": false,
+                "limited": false,
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "obtainedFrom": "CN/EN: Awarded and unlocked in construction when Collection goal is met using the following ships: Javelin, Laffey, Z23",
+            "fromMaps": [
+                {
+                    "name": "2-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "3-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "4-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "5-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "6-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "7-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "8-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "9-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "10-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "11-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "12-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "13-1",
+                    "note": "JP only"
+                },
+                {
+                    "name": "2-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "3-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "4-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "5-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "6-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "7-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "8-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "9-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "10-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "11-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "12-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "13-2",
+                    "note": "JP only"
+                },
+                {
+                    "name": "2-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "3-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "4-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "5-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "6-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "7-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "8-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "9-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "10-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "11-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "12-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "13-3",
+                    "note": "JP only"
+                },
+                {
+                    "name": "2-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "3-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "4-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "5-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "6-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "7-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "8-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "9-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "10-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "11-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "12-4",
+                    "note": "JP only"
+                },
+                {
+                    "name": "13-4",
+                    "note": "JP only"
+                }
+            ]
+        },
+        "misc": {
+            "artist": {
+                "name": "大月紅葉",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#大月紅葉",
+                    "Pixiv": "https://www.pixiv.net/member.php?id=591937",
+                    "Twitter": "https://twitter.com/ootsukimomiji",
+                    "Link": "http://weibo.com/ootsukimomiji"
+                }
+            },
+            "voice": {
+                "name": "You Taichi",
+                "url": "https://en.wikipedia.org/wiki/Y%C5%8D_Taichi"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Default/chibi.png",
+                "info": {
+                    "live2dModel": true,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/22/AyanamiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/a8/AyanamiChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/8/8b/AyanamiBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Retrofit",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Retrofit/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Retrofit/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Retrofit",
+                    "category": "Retrofit",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/3/35/AyanamiKaiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/c/c4/AyanamiKaiChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/c/c9/AyanamiKaiBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Wedding",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Wedding/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Wedding/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Wedding",
+                    "category": "Wedding",
+                    "enClient": "Demon's Finest Dress",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "鬼神之华裳",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "鬼神華裳",
+                    "jpLimited": "Permanently Available",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/11/AyanamiWeddingIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/ec/AyanamiWeddingChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/5b/AyanamiWeddingBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Witch in Ambush",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Witch_in_Ambush/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Witch_in_Ambush/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Halloween",
+                    "enClient": "Witch in Ambush",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "待宵的魔女",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "宵闇待ちの魔女",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Operation Manjuu",
+                    "cost": 700,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/23/AyanamiHalloweenIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/a5/AyanamiHalloweenChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f7/AyanamiHalloweenBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "NicoNico",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/NicoNico/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/NicoNico/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "NicoNico Collaboration Event Questline",
+                    "category": "Collab Event",
+                    "enClient": "Skin unavailable",
+                    "enLimited": "Unavailable",
+                    "cnClient": "Skin unavailable",
+                    "cnLimited": "Unavailable",
+                    "jpClient": "ニコニコ",
+                    "jpLimited": "Event Limited",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/44/AyanamiNicoNicoIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/7/74/AyanamiNicoNicoChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/92/AyanamiNicoNicoBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Rock 'n' Demon",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Rock_n_Demon/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Rock_n_Demon/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Miscellaneous",
+                    "enClient": "Rock 'n' Demon",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "乐队型鬼神",
+                    "cnLimited": "Limited",
+                    "jpClient": "ROCK'n KIJIN",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Operation Manjuu",
+                    "cost": 800,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/6/6b/AyanamiRockIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/47/AyanamiRockChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/04/AyanamiRockBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Lunar Demon",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Lunar_Demon/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_102.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Lunar_Demon/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Spring",
+                    "enClient": "Lunar Demon",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "新岁之鬼神",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "波濤新歳",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Lunar New Year 2019",
+                    "cost": 780,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/6/66/AyanamiSpringIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/93/AyanamiSpringChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/53/AyanamiSpringBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Grade A Sailor Uniform",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Grade_A_Sailor_Uniform/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Grade_A_Sailor_Uniform/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Miscellaneous",
+                    "enClient": "Grade A Sailor Uniform",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "一式水手风制服",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "壱式給仕海軍制服",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Virtual Connection Synchronicity (Coco Ichibanya and Pasta de Coco Collab)",
+                    "cost": 700,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/19/AyanamiCoCoIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/c/c4/AyanamiCoCoChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/10/AyanamiCoCoBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Covert Ops Cloak",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Covert_Ops_Cloak/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Covert_Ops_Cloak/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Anime Blu-Ray First Press Edition Vol. 4 bonus",
+                    "category": "Bluray",
+                    "enClient": "Covert Ops Cloak",
+                    "enLimited": "Event Limited",
+                    "cnClient": "特殊潜入作战披风",
+                    "cnLimited": "Event Limited",
+                    "jpClient": "特殊潜入作戦雨覆",
+                    "jpLimited": "Event Limited",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/19/AyanamiBlurayIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/9e/AyanamiBlurayChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/24/AyanamiBlurayBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Covert_Ops_Cloak/image.png"
+            },
+            {
+                "name": "Low-Key Idol @Confused",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/LowKey_Idol_Confused/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_120.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/LowKey_Idol_Confused/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Idol",
+                    "enClient": "Low-Key Idol @Confused",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "冷静偶像·迷惑中",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "おませアイドル・困惑中",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Crescendo of Polaris",
+                    "cost": 800,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/3/30/AyanamiIdolIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f2/AyanamiIdolChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f5/AyanamiIdolBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Pulse of the New Year",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Pulse_of_the_New_Year/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_126.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Pulse_of_the_New_Year/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "New Year",
+                    "enClient": "Pulse of the New Year",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "新年的愿望",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "年越しの鼓動",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Swirling Cherry Blossoms",
+                    "cost": 780,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f7/AyanamiNew_YearIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/c/c5/AyanamiNew_YearChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/9e/AyanamiNew_YearBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Nightfall Raiment",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Nightfall_Raiment/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_135.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Nightfall_Raiment/chibi.png",
+                "info": {
+                    "live2dModel": true,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Party",
+                    "enClient": "Nightfall Raiment",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "黯然礼装",
+                    "cnLimited": "Limited",
+                    "jpClient": "闇然礼装",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Lights of Circle City",
+                    "cost": 1100,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/b9/AyanamiPartyIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/b0/AyanamiPartyChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/ed/AyanamiPartyBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Nightfall_Raiment/image.png"
+            },
+            {
+                "name": "Off-Duty Battle Station Gear",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/OffDuty_Battle_Station_Gear/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_109.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/OffDuty_Battle_Station_Gear/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Azur Lane Slow Ahead Blu-Ray Limited Edition Vol. 1 bonus",
+                    "category": "Bluray",
+                    "enClient": "Off-Duty Battle Station Gear",
+                    "enLimited": "Event Limited",
+                    "cnClient": "微速战斗姿势",
+                    "cnLimited": "Event Limited",
+                    "jpClient": "微速戦闘姿勢",
+                    "jpLimited": "Event Limited",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/02/AyanamiBluray2Icon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/54/AyanamiBluray2ChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/28/AyanamiBluray2Banner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/OffDuty_Battle_Station_Gear/image.png"
+            },
+            {
+                "name": "Dynasty Shipgirl",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Dynasty_Shipgirl/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_152.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Dynasty_Shipgirl/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Spring",
+                    "enClient": "Dynasty Shipgirl",
+                    "enLimited": "Limited",
+                    "cnClient": "苍墨武鉴",
+                    "cnLimited": "Limited",
+                    "jpClient": "Navalistic Showdown",
+                    "jpLimited": "Limited",
+                    "firstIntroduced": "Happy Lunar New Year 2022",
+                    "cost": 800,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/d9/AyanamiSpring2Icon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/bd/AyanamiSpring2ChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/bb/AyanamiSpring2Banner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Dynasty_Shipgirl/image.png"
+            },
+            {
+                "name": "Cola Fills You With Determination",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Cola_Fills_You_With_Determination/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Cola_Fills_You_With_Determination/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Miscellaneous",
+                    "enClient": "Cola Fills You With Determination",
+                    "enLimited": "Limited",
+                    "cnClient": "可乐，加上努力？",
+                    "cnLimited": "Limited",
+                    "jpClient": "コーラに努力を添えて",
+                    "jpLimited": "Limited",
+                    "firstIntroduced": "Manjuu Fast Food",
+                    "cost": 700,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/04/AyanamiKFCIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/e2/AyanamiKFCChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/58/AyanamiKFCBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Dynamic Kick!",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Dynamic_Kick/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_158.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/155/Dynamic_Kick/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Miscellaneous",
+                    "enClient": "Dynamic Kick!",
+                    "enLimited": "Limited",
+                    "cnClient": "跃动飞踢！",
+                    "cnLimited": "Limited",
+                    "jpClient": "ダイナミック・キックオフ",
+                    "jpLimited": "Limited",
+                    "firstIntroduced": "Rising of the Ship Heroes!",
+                    "cost": 780,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/7/70/AyanamiRPGIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/5d/AyanamiRPGChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/fc/AyanamiRPGBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Laffey, Z23, Ayanami, and Javelin",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.09.29TW_1.png"
+            },
+            {
+                "description": "Z23, Laffey, Javelin, and Ayanami",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.09.22_2.png"
+            },
+            {
+                "description": "Z23, Laffey, Shimakaze, Ayanami, Javelin",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.09.30_12.png"
+            },
+            {
+                "description": "Z23, Laffey, Shimakaze, Ayanami, Javelin",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.09.25_2.png"
+            },
+            {
+                "description": "Javelin, Laffey, Z23, Ayanami",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.05.27_3.png"
+            },
+            {
+                "description": "Laffey, Ayanami, Javelin",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.03.12_3.png"
+            },
+            {
+                "description": "Bremerton, Z23, Laffey, Javelin, Ayanami, Prinz Heinrich, Kumano, Pamiat Merkuria",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.03.12_1.png"
+            },
+            {
+                "description": "Ayanami, Javelin, Laffey, Cygnet, Sirius and Ark Royal",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.09.30_4.png"
+            },
+            {
+                "description": "Ayanami, Javelin, Z23, Laffey",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.02.13_1.png"
+            },
+            {
+                "description": "Z23, Javelin, Laffey, Eldridge, Ayanami",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2019.11.14_2.png"
+            },
+            {
+                "description": "Javelin, Ayanami, Laffey",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/GalleryPic40.png"
+            },
+            {
+                "description": "Ayanami, Inazuma, Ikazuchi, and Fubuki in some in-game Gallery artwork",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/GalleryPic55.png"
+            }
+        ]
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Aylwin",
+        "id": "406",
+        "_gid": 10140,
+        "_sid": [
+            101401,
+            101402,
+            101403,
+            101404
+        ],
+        "_code": 406,
+        "names": {
+            "en": "Aylwin",
+            "code": "USS Aylwin",
+            "cn": "艾尔温",
+            "jp": "エールウィン",
+            "kr": "아일윈",
+            "tw": "艾爾文"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            2,
+            2,
+            0,
+            3,
+            2,
+            2
+        ],
+        "class": "Farragut",
+        "nationality": "Eagle Union",
+        "hullType": "Destroyer",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/406/thumbnail.png",
+        "rarity": "Rare",
+        "stars": 4,
+        "stats": {
+            "baseStats": {
+                "health": "271",
+                "armor": "Light",
+                "reload": "73",
+                "luck": "83",
+                "firepower": "15",
+                "torpedo": "52",
+                "evasion": "60",
+                "speed": "44",
+                "antiair": "34",
+                "aviation": "0",
+                "oilConsumption": "2",
+                "accuracy": "63",
+                "antisubmarineWarfare": "48"
+            },
+            "level100": {
+                "health": "1516",
+                "armor": "Light",
+                "reload": "189",
+                "luck": "83",
+                "firepower": "76",
+                "torpedo": "264",
+                "evasion": "180",
+                "speed": "44",
+                "antiair": "167",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "169",
+                "antisubmarineWarfare": "185"
+            },
+            "level120": {
+                "health": "1680",
+                "armor": "Light",
+                "reload": "200",
+                "luck": "83",
+                "firepower": "81",
+                "torpedo": "279",
+                "evasion": "204",
+                "speed": "44",
+                "antiair": "183",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "189",
+                "antisubmarineWarfare": "197"
+            },
+            "level125": {
+                "health": "1720",
+                "armor": "Light",
+                "reload": "202",
+                "luck": "83",
+                "firepower": "82",
+                "torpedo": "282",
+                "evasion": "210",
+                "speed": "44",
+                "antiair": "186",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "194",
+                "antisubmarineWarfare": "200"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 120,
+                "minEfficiency": 110,
+                "type": "DD Guns",
+                "max": 1
+            },
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 120,
+                "type": "Torpedoes",
+                "max": 2
+            },
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 120,
+                "type": "Anti-Air Guns",
+                "max": 1
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 5,
+            "torpedo": 17,
+            "aviation": 0,
+            "reload": 14
+        },
+        "scrapValue": {
+            "coin": 12,
+            "medal": 1
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/406/carrier_escort.png",
+                "names": {
+                    "en": "Carrier Escort",
+                    "cn": "空母护航",
+                    "jp": "随伴空母"
+                },
+                "description": "When alive in fleet, reduce damage taken by allied CV/L by 5% (15%). Does not stack with the same skill.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/406/all_out_assault.png",
+                "names": {
+                    "en": "All Out Assault",
+                    "cn": "全弹发射",
+                    "jp": "全弾発射-ファラガット級"
+                },
+                "description": "Every 15 (10) times the main gun is fired, triggers All Out Assault - Farragut Class I (II)",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Gains All Out Assault I",
+                "All Weapon Efficiency +2%"
+            ],
+            [
+                "Max Torpedo Capacity +1",
+                "Pre-loaded Torpedo +1",
+                "All Weapon Efficiency +3%"
+            ],
+            [
+                "Upgrades All Out Assault I→II",
+                "All Weapon Efficiency +5%",
+                "Boosts stats given by Aux Gear by 30%"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                }
+            },
+            "techPoints": {
+                "collection": 3,
+                "maxLimitBreak": 7,
+                "maxLevel": 5,
+                "total": 15
+            }
+        },
+        "construction": {
+            "constructionTime": "Drop Only",
+            "availableIn": {
+                "light": false,
+                "heavy": false,
+                "aviation": false,
+                "limited": "Only during the Ashen Simulacrum event",
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "obtainedFrom": "Ashen Simulacrum (B1, B2, B3, D1, D2, D3)",
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "或一",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#或一",
+                    "Pixiv": "http://www.pixiv.net/member.php?id=1904395",
+                    "Link": "http://bcy.net/u/1495574"
+                }
+            },
+            "voice": {
+                "name": "Ayaka Ouhashi",
+                "url": "https://en.wikipedia.org/wiki/Ayaka_%C5%8Chashi"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/406/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/406/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/b3/AylwinIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/a2/AylwinChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/45/AylwinBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Sunday Aquarium Visit",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/406/Sunday_Aquarium_Visit/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/406/Sunday_Aquarium_Visit/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Casual",
+                    "enClient": "Sunday Aquarium Visit",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "星期天的水族馆",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "サンデー・アクアリウム",
+                    "jpLimited": "Permanently Available",
+                    "cost": 700,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/0f/AylwinCasualIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/25/AylwinCasualChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/9b/AylwinCasualBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Cavalla, Alabama, Baltimore, San Juan, Aylwin, and Birmingham",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_ashen_1.png"
+            }
+        ]
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Azuma",
+        "id": "Plan010",
+        "_gid": 39904,
+        "_sid": [
+            399041,
+            399042,
+            399043,
+            399044
+        ],
+        "_code": 20010,
+        "names": {
+            "en": "Azuma",
+            "code": "IJN Azuma",
+            "cn": "吾妻",
+            "jp": "吾妻",
+            "kr": "아즈마",
+            "tw": "吾妻"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            4,
+            0,
+            0,
+            2,
+            2,
+            5
+        ],
+        "class": "Azuma",
+        "nationality": "Sakura Empire",
+        "hullType": "Large Cruiser",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/thumbnail.png",
+        "rarity": "Decisive",
+        "stars": 6,
+        "stats": {
+            "baseStats": {
+                "health": "1291",
+                "armor": "Medium",
+                "reload": "62",
+                "luck": "0",
+                "firepower": "58",
+                "torpedo": "0",
+                "evasion": "11",
+                "speed": "27",
+                "antiair": "42",
+                "aviation": "0",
+                "oilConsumption": "9",
+                "accuracy": "43",
+                "antisubmarineWarfare": "0"
+            },
+            "level100": {
+                "health": "6840",
+                "armor": "Medium",
+                "reload": "160",
+                "luck": "25",
+                "firepower": "281",
+                "torpedo": "0",
+                "evasion": "44",
+                "speed": "27",
+                "antiair": "206",
+                "aviation": "0",
+                "oilConsumption": "16",
+                "accuracy": "112",
+                "antisubmarineWarfare": "0"
+            },
+            "level120": {
+                "health": "7541",
+                "armor": "Medium",
+                "reload": "170",
+                "luck": "25",
+                "firepower": "307",
+                "torpedo": "0",
+                "evasion": "50",
+                "speed": "27",
+                "antiair": "226",
+                "aviation": "0",
+                "oilConsumption": "16",
+                "accuracy": "125",
+                "antisubmarineWarfare": "0"
+            },
+            "level125": {
+                "health": "7717",
+                "armor": "Medium",
+                "reload": "172",
+                "luck": "25",
+                "firepower": "314",
+                "torpedo": "0",
+                "evasion": "51",
+                "speed": "27",
+                "antiair": "231",
+                "aviation": "0",
+                "oilConsumption": "16",
+                "accuracy": "129",
+                "antisubmarineWarfare": "0"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 100,
+                "minEfficiency": 70,
+                "type": "CA/CB Guns",
+                "max": 2
+            },
+            {
+                "maxEfficiency": 60,
+                "minEfficiency": 50,
+                "type": "DD Guns",
+                "max": 1
+            },
+            {
+                "maxEfficiency": 110,
+                "minEfficiency": 100,
+                "type": "Anti-Air Guns",
+                "max": 1
+            }
+        ],
+        "enhanceValue": {},
+        "scrapValue": {},
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/blazing_peaks.png",
+                "names": {
+                    "en": "Blazing Peaks",
+                    "cn": "怒火连峰",
+                    "jp": "轟火連嶺"
+                },
+                "description": "If equipped with a high caliber Main Gun (280mm or more): increases damage dealt with Main Gun by up to 15% (25%) depending on the distance the shells travel. Also increases Burn damage dealt to enemies by 20% (50%).",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/mizuhos_intuition.png",
+                "names": {
+                    "en": "Mizuho's Intuition",
+                    "cn": "战场嗅觉",
+                    "jp": "ミズホの直感"
+                },
+                "description": "Every 20s: 30% (70%) chance to increase own Evasion by 10% (20%) and Accuracy by 20% (50%) for 12s.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/deepskyblue.fate_simulation.png",
+                "names": {
+                    "en": "(Fate Simulation)",
+                    "cn": "战场嗅觉+",
+                    "jp": "ミズホの直感+"
+                },
+                "description": "Every 20s: 50% (100%) chance to increase own Evasion by 15% (25%) and Accuracy by 20% (50%), and decreases this ship's torpedo DMG taken by 5% (15%) for 12s. (Replaces \"Mizuho's Intuition\" at Fate Simulation III)",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/special_gunnery_training.png",
+                "names": {
+                    "en": "Special Gunnery Training",
+                    "cn": "特殊炮击训练",
+                    "jp": "特殊砲術操典"
+                },
+                "description": "Every 8 times this ship fires its main guns, fire a special barrage (barrage damage scales with skill level). If equipped with the Prototype 310mm gun, increase this ship's main gun efficiency by 4.5% (12%), improve the special barrage based upon proximity to the nearest enemy, and fire it every 4 times main gun is fired instead.\nBarrage preview (gif)\nBarrage Enhanced - Close preview (gif)\nBarrage Enhanced - Far preview (gif)",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/pink.fate_simulation.png",
+                "names": {
+                    "en": "(Fate Simulation)",
+                    "cn": "特殊炮击训练+",
+                    "jp": "特殊砲術操典+"
+                },
+                "description": "Every 8 times this ship fires its main guns, fire a special barrage (barrage damage scales with skill level). The barrage inflicts a special burn to all enemies it hits. If equipped with a high caliber Main Gun (280mm or more), increase this ship's main gun efficiency by 4.5% (12%), improve the special barrage based upon proximity to the nearest enemy, and fire it every 4 times main gun is fired instead. (Replaces \"Special Gunnery Training\")",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/Plan010/siren_killer.png",
+                "names": {
+                    "en": "Siren Killer",
+                    "cn": "塞壬之敌",
+                    "jp": "対セイレーン特化改修"
+                },
+                "description": "Increases own damage dealt to Sirens by 5% (15%).",
+                "color": "pink"
+            }
+        ],
+        "devLevels": [
+            {
+                "level": "5",
+                "buffs": [
+                    "Health  +315,  Anti-air  +10",
+                    "Main Gun Mount +1",
+                    "Main Gun Efficiency +5%"
+                ]
+            },
+            {
+                "level": "10",
+                "buffs": [
+                    "Gains Siren Killer I",
+                    "",
+                    "Main Gun Efficiency +5%",
+                    "Stars increase to ★★★★☆☆"
+                ]
+            },
+            {
+                "level": "15",
+                "buffs": [
+                    "Health  +629,  Anti-air  +21",
+                    "Anti-Air Gun Efficiency +10%"
+                ]
+            },
+            {
+                "level": "20",
+                "buffs": [
+                    "Upgrades Siren Killer I→II",
+                    "Secondary Gun Efficiency +10%",
+                    "Stars increase to ★★★★★☆"
+                ]
+            },
+            {
+                "level": "25",
+                "buffs": [
+                    "Health  +945,  Anti-air  +31,  Evasion  +5",
+                    "Main Gun Efficiency +5%"
+                ]
+            },
+            {
+                "level": "30",
+                "buffs": [
+                    "Upgrades Siren Killer II→III",
+                    "Main Gun Efficiency +15%",
+                    "Stars increase to ★★★★★★"
+                ]
+            }
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Heavy cruiser",
+                        "Large cruiser",
+                        "Monitor"
+                    ],
+                    "bonus": "+1",
+                    "stat": "firepower"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Heavy cruiser",
+                        "Large cruiser",
+                        "Monitor"
+                    ],
+                    "bonus": "+1",
+                    "stat": "firepower"
+                }
+            },
+            "techPoints": {
+                "collection": 24,
+                "maxLimitBreak": 36,
+                "maxLevel": 48,
+                "total": 108
+            }
+        },
+        "construction": {
+            "constructionTime": "Research",
+            "availableIn": {
+                "light": false,
+                "heavy": false,
+                "aviation": false,
+                "limited": false,
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "木shiyo",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#木shiyo",
+                    "Pixiv": "https://www.pixiv.net/member.php?id=40222",
+                    "Twitter": "https://twitter.com/kishiyo1943",
+                    "Link": "https://weibo.com/u/2481339344"
+                }
+            },
+            "voice": {
+                "name": "Kiyono Yasuno",
+                "url": "https://en.wikipedia.org/wiki/Kiyono_Yasuno"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/25/AzumaIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/d4/AzumaChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/8/89/AzumaBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Wedding",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Wedding/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Wedding/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Wedding",
+                    "category": "Wedding",
+                    "enClient": "Lily-White Longing",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "纯洁憧憬",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "仕合せのホワイト・ラブ",
+                    "jpLimited": "Permanently Available",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/03/AzumaWeddingIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/08/AzumaWeddingChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/e6/AzumaWeddingBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Soft Voice of Spring",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Soft_Voice_of_Spring/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_128.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Plan010/Soft_Voice_of_Spring/chibi.png",
+                "info": {
+                    "live2dModel": true,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Spring",
+                    "enClient": "Soft Voice of Spring",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "细语春霞",
+                    "cnLimited": "Limited",
+                    "jpClient": "語らいの春霞",
+                    "jpLimited": "Permanently Available",
+                    "cost": 1200,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/0f/AzumaSpringIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/12/AzumaSpringChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/24/AzumaSpringBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Deutschland, Admiral Graf Spee, Kitakaze, Azuma, Yukikaze",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.11.18_1.png"
+            },
+            {
+                "description": "Illustrious, Hiei, Swiftsure, Taihou, Azuma, Yukikaze",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.01.22_5.png"
+            },
+            {
+                "description": "Swiftsure, Azuma, Chang Chun, Ping Hai, Yukikaze",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.01.22_1.png"
+            },
+            {
+                "description": "Belfast, Azuma",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2019.12.26_3.png"
+            }
+        ]
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Azusa_Miura",
+        "id": "10074",
+        "_gid": 1070004,
+        "_sid": [
+            10700041,
+            10700042,
+            10700043,
+            10700044
+        ],
+        "_code": 10074,
+        "names": {
+            "en": "Azusa Miura",
+            "code": "Azusa Miura",
+            "cn": "三浦 梓",
+            "jp": "三浦あずさ",
+            "kr": "미우라 아즈사",
+            "tw": "三浦梓"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            3,
+            0,
+            0,
+            2,
+            2,
+            4
+        ],
+        "class": "Azusa Miura",
+        "nationality": "The Idolmaster",
+        "hullType": "Heavy Cruiser",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/10074/thumbnail.png",
+        "rarity": "Super Rare",
+        "stars": 6,
+        "stats": {
+            "baseStats": {
+                "health": "873",
+                "armor": "Medium",
+                "reload": "64",
+                "luck": "91",
+                "firepower": "44",
+                "torpedo": "0",
+                "evasion": "17",
+                "speed": "26",
+                "antiair": "39",
+                "aviation": "0",
+                "oilConsumption": "4",
+                "accuracy": "45",
+                "antisubmarineWarfare": "0"
+            },
+            "level100": {
+                "health": "4740",
+                "armor": "Medium",
+                "reload": "165",
+                "luck": "91",
+                "firepower": "227",
+                "torpedo": "0",
+                "evasion": "57",
+                "speed": "26",
+                "antiair": "192",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "117",
+                "antisubmarineWarfare": "0"
+            },
+            "level120": {
+                "health": "5237",
+                "armor": "Medium",
+                "reload": "174",
+                "luck": "91",
+                "firepower": "240",
+                "torpedo": "0",
+                "evasion": "65",
+                "speed": "26",
+                "antiair": "211",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "131",
+                "antisubmarineWarfare": "0"
+            },
+            "level125": {
+                "health": "5361",
+                "armor": "Medium",
+                "reload": "177",
+                "luck": "91",
+                "firepower": "243",
+                "torpedo": "0",
+                "evasion": "67",
+                "speed": "26",
+                "antiair": "215",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "134",
+                "antisubmarineWarfare": "0"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 120,
+                "minEfficiency": 100,
+                "type": "CA Guns",
+                "max": 2
+            },
+            {
+                "maxEfficiency": 65,
+                "minEfficiency": 60,
+                "type": "DD Guns",
+                "max": 1
+            },
+            {
+                "maxEfficiency": 115,
+                "minEfficiency": 110,
+                "type": "Anti-Air Guns",
+                "max": 1
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 24,
+            "torpedo": 0,
+            "aviation": 0,
+            "reload": 12
+        },
+        "scrapValue": {
+            "coin": 18,
+            "medal": 10
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/10074/feigned_innocence.png",
+                "names": {
+                    "en": "Feigned Innocence?",
+                    "cn": "天然系？招牌姿势",
+                    "jp": "おっとり？ポージング"
+                },
+                "description": "When this ship fires her Main Guns: 15% (30%) chance to increase this ship's Main Gun DMG by 50% for 3s and AA by 5% (15%) for 5s. This effect may only activate once every 5s.",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/10074/healing_augury.png",
+                "names": {
+                    "en": "Healing Augury",
+                    "cn": "治愈系占卜",
+                    "jp": "癒やしの占い"
+                },
+                "description": "As long as this ship is afloat: decreases your Main Fleet's DMG taken by 1% (5%). At the start of the battle: tells a fortune and receives one of the following effects: 1) Increases this ship's EVA by 4.5% (12%); 2) Increases this ship's Accuracy by 4.5% (12%); 3) Increases this ship's FP by 4.5% (12%); 4) Heals this ship for 5% (15%) HP.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/10074/directionally_challenged.png",
+                "names": {
+                    "en": "Directionally Challenged",
+                    "cn": "迷路的偶像",
+                    "jp": "時々迷子に"
+                },
+                "description": "Every 20s after the battle starts: fires a Lv.1 (Lv.10) special barrage (DMG is based on the skill's level). If your Vanguard consists of only this ship when this barrage activates: this ship becomes lost and stops in place (Speed drops to 0) for 2s.",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Main gun efficiency +5%"
+            ],
+            [
+                "Main Gun Mount +1",
+                "Main gun efficiency +10%"
+            ],
+            [
+                "All weapons' efficiency +5%"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": null,
+                "maxLevel": {
+                    "applicable": [],
+                    "bonus": "",
+                    "stat": "firepower"
+                }
+            },
+            "techPoints": {
+                "collection": null,
+                "maxLimitBreak": 0,
+                "maxLevel": 0,
+                "total": 0
+            }
+        },
+        "construction": {
+            "constructionTime": "01:59:50",
+            "availableIn": {
+                "light": false,
+                "heavy": false,
+                "aviation": false,
+                "limited": "Only during event: Azur Anthem",
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "obtainedFrom": "Available in Limited Construction, Event Store and as Map Drop during \"Azur Anthem\" Event.",
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "Unknown",
+                "urls": {
+                    "Link": "null"
+                }
+            },
+            "voice": {
+                "name": "Chiaki Takahashi",
+                "url": "https://en.wikipedia.org/wiki/Chiaki_Takahashi_(actress)"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/10074/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/10074/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/b9/Azusa_MiuraIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/0d/Azusa_MiuraChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/d9/Azusa_MiuraBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Midsummer Relaxation",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/10074/Midsummer_Relaxation/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_142.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/10074/Midsummer_Relaxation/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Collab",
+                    "enClient": "Midsummer Relaxation",
+                    "enLimited": "Limited",
+                    "cnClient": "盛夏的休憩之所",
+                    "cnLimited": "Limited",
+                    "jpClient": "盛夏の休み処",
+                    "jpLimited": "Limited",
+                    "cost": 880,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/40/Azusa_MiuraFestivalIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/1f/Azusa_MiuraFestivalChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/8/86/Azusa_MiuraFestivalBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            }
+        ],
+        "gallery": []
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Bache",
+        "id": "407",
+        "_gid": 10135,
+        "_sid": [
+            101351,
+            101352,
+            101353,
+            101354
+        ],
+        "_code": 407,
+        "names": {
+            "en": "Bache",
+            "code": "USS Bache",
+            "cn": "贝奇",
+            "jp": "バッチ",
+            "kr": "배시",
+            "tw": "貝奇"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            2,
+            2,
+            0,
+            3,
+            2,
+            2
+        ],
+        "class": "Fletcher",
+        "nationality": "Eagle Union",
+        "hullType": "Destroyer",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/thumbnail.png",
+        "rarity": "Rare",
+        "stars": 4,
+        "stats": {
+            "baseStats": {
+                "health": "338",
+                "armor": "Light",
+                "reload": "72",
+                "luck": "78",
+                "firepower": "14",
+                "torpedo": "53",
+                "evasion": "60",
+                "speed": "43",
+                "antiair": "36",
+                "aviation": "0",
+                "oilConsumption": "2",
+                "accuracy": "68",
+                "antisubmarineWarfare": "46"
+            },
+            "level100": {
+                "health": "1891",
+                "armor": "Light",
+                "reload": "186",
+                "luck": "78",
+                "firepower": "72",
+                "torpedo": "268",
+                "evasion": "180",
+                "speed": "43",
+                "antiair": "177",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "182",
+                "antisubmarineWarfare": "176"
+            },
+            "level120": {
+                "health": "2095",
+                "armor": "Light",
+                "reload": "197",
+                "luck": "78",
+                "firepower": "76",
+                "torpedo": "283",
+                "evasion": "203",
+                "speed": "43",
+                "antiair": "194",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "204",
+                "antisubmarineWarfare": "187"
+            },
+            "level125": {
+                "health": "2146",
+                "armor": "Light",
+                "reload": "199",
+                "luck": "78",
+                "firepower": "77",
+                "torpedo": "287",
+                "evasion": "209",
+                "speed": "43",
+                "antiair": "198",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "210",
+                "antisubmarineWarfare": "190"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 120,
+                "minEfficiency": 110,
+                "type": "DD Guns",
+                "max": 1
+            },
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 120,
+                "type": "Torpedoes",
+                "max": 2
+            },
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 120,
+                "type": "Anti-Air Guns",
+                "max": 1
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 5,
+            "torpedo": 17,
+            "aviation": 0,
+            "reload": 14
+        },
+        "scrapValue": {
+            "coin": 12,
+            "medal": 1
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/407/bache_in_the_sky.png",
+                "names": {
+                    "en": "Bache In The Sky",
+                    "cn": "乘风的贝奇",
+                    "jp": "バッチ・インザスカイ"
+                },
+                "description": "Reduces aviation damage taken to self by 10% (30%). When firing Anti-Air guns: 25% chance to increase own Anti-Air by 10% (30%) for 8s.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/407/all_out_assault.png",
+                "names": {
+                    "en": "All Out Assault",
+                    "cn": "全弹发射",
+                    "jp": "全弾発射-フレッチャー級"
+                },
+                "description": "Every 15 (10) times the main gun is fired, triggers All Out Assault - Fletcher-class I (II)",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Gains All Out Assault I",
+                "All Weapon Efficiency +2%"
+            ],
+            [
+                "Max Torpedo Capacity +1",
+                "Pre-loaded Torpedo +1",
+                "All Weapon Efficiency +3%"
+            ],
+            [
+                "Upgrades All Out Assault I→II",
+                "All Weapon Efficiency +5%",
+                "Boosts stats given by Aux Gear by 30%"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "antiair"
+                }
+            },
+            "techPoints": {
+                "collection": 6,
+                "maxLimitBreak": 13,
+                "maxLevel": 9,
+                "total": 28
+            }
+        },
+        "construction": {
+            "constructionTime": "00:28:00",
+            "availableIn": {
+                "light": true,
+                "heavy": false,
+                "aviation": false,
+                "limited": false,
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "水熊",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#水熊",
+                    "Pixiv": "https://www.pixiv.net/member.php?id=1077075",
+                    "Twitter": "https://twitter.com/waterkuma0",
+                    "Link": "https://www.artstation.com/mokutan"
+                }
+            },
+            "voice": {
+                "name": "Sayaka Kaneko",
+                "url": "https://www.imdb.com/name/nm10116901/"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/05/BacheIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/5d/BacheChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/54/BacheBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Gorgeous Speed-star",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Gorgeous_Speedstar/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_118.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Gorgeous_Speedstar/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Casual",
+                    "enClient": "Gorgeous Speed-star",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "华丽的速度之星",
+                    "cnLimited": "Limited",
+                    "jpClient": "華麗なるスピードスター",
+                    "jpLimited": "Permanently Available",
+                    "cost": 780,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/ec/BacheCasualIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/dd/BacheCasualChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/5a/BacheCasualBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Showy Sports Star",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Showy_Sports_Star/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_132.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/407/Showy_Sports_Star/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Sport",
+                    "enClient": "Showy Sports Star",
+                    "enLimited": "Limited",
+                    "cnClient": "炫目的赛场之星",
+                    "cnLimited": "Limited",
+                    "jpClient": "絢爛なるスポーツスター",
+                    "jpLimited": "Permanently Available",
+                    "cost": 800,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/ef/BacheSportIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/7/72/BacheSportChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/6/60/BacheSportBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Bache, Baltimore, St. Louis, Laffey (far back), Nicholas (far back), Anchorage, San Francisco",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.01.27_1.png"
+            },
+            {
+                "description": "Bache",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.06.10_11.png"
+            },
+            {
+                "description": "Bache, Baltimore, Prinz Eugen",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.05.27_11.png"
+            },
+            {
+                "description": "Bache, San Diego",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.10.29_1.png"
+            },
+            {
+                "description": "Bremerton, Bache, Baltimore",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.09.24_7.png"
+            },
+            {
+                "description": "Akashi, Bache, San Diego, Cleveland, Laffey",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.03.31_1.png"
+            }
+        ]
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Bailey",
+        "id": "263",
+        "_gid": 10127,
+        "_sid": [
+            101271,
+            101272,
+            101273,
+            101274
+        ],
+        "_code": 263,
+        "names": {
+            "en": "Bailey",
+            "code": "USS Bailey",
+            "cn": "贝利",
+            "jp": "ベイリー",
+            "kr": "베일리",
+            "tw": "貝利"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            2,
+            2,
+            0,
+            3,
+            2,
+            2
+        ],
+        "class": "Benson",
+        "nationality": "Eagle Union",
+        "hullType": "Destroyer",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/thumbnail.png",
+        "rarity": "Rare",
+        "stars": 4,
+        "stats": {
+            "baseStats": {
+                "health": "294",
+                "armor": "Light",
+                "reload": "75",
+                "luck": "70",
+                "firepower": "16",
+                "torpedo": "60",
+                "evasion": "60",
+                "speed": "44",
+                "antiair": "32",
+                "aviation": "0",
+                "oilConsumption": "2",
+                "accuracy": "67",
+                "antisubmarineWarfare": "47"
+            },
+            "level100": {
+                "health": "1648",
+                "armor": "Light",
+                "reload": "193",
+                "luck": "70",
+                "firepower": "83",
+                "torpedo": "303",
+                "evasion": "180",
+                "speed": "44",
+                "antiair": "157",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "179",
+                "antisubmarineWarfare": "181"
+            },
+            "level120": {
+                "health": "1826",
+                "armor": "Light",
+                "reload": "204",
+                "luck": "70",
+                "firepower": "87",
+                "torpedo": "320",
+                "evasion": "204",
+                "speed": "44",
+                "antiair": "172",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "201",
+                "antisubmarineWarfare": "192"
+            },
+            "level125Retrofit": {
+                "health": "2080",
+                "armor": "Light",
+                "reload": "227",
+                "luck": "70",
+                "firepower": "104",
+                "torpedo": "324",
+                "evasion": "210",
+                "speed": "47",
+                "antiair": "265",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "207",
+                "antisubmarineWarfare": "195"
+            },
+            "level125": {
+                "health": "1870",
+                "armor": "Light",
+                "reload": "207",
+                "luck": "70",
+                "firepower": "89",
+                "torpedo": "324",
+                "evasion": "210",
+                "speed": "44",
+                "antiair": "175",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "207",
+                "antisubmarineWarfare": "195"
+            },
+            "level120Retrofit": {
+                "health": "2036",
+                "armor": "Light",
+                "reload": "224",
+                "luck": "70",
+                "firepower": "102",
+                "torpedo": "320",
+                "evasion": "204",
+                "speed": "47",
+                "antiair": "262",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "201",
+                "antisubmarineWarfare": "192"
+            },
+            "level100Retrofit": {
+                "health": "1858",
+                "armor": "Light",
+                "reload": "213",
+                "luck": "70",
+                "firepower": "98",
+                "torpedo": "303",
+                "evasion": "180",
+                "speed": "47",
+                "antiair": "247",
+                "aviation": "0",
+                "oilConsumption": "8",
+                "accuracy": "179",
+                "antisubmarineWarfare": "181"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 110,
+                "type": "DD Guns",
+                "max": 1,
+                "kaiEfficiency": 135
+            },
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 125,
+                "type": "Torpedoes",
+                "max": 2,
+                "kaiEfficiency": 135
+            },
+            {
+                "maxEfficiency": 125,
+                "minEfficiency": 120,
+                "type": "Anti-Air Guns",
+                "max": 1,
+                "kaiEfficiency": 125
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 5,
+            "torpedo": 20,
+            "aviation": 0,
+            "reload": 14
+        },
+        "scrapValue": {
+            "coin": 12,
+            "medal": 1
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/263/smokescreen.png",
+                "names": {
+                    "en": "Smokescreen",
+                    "cn": "烟雾弹",
+                    "jp": "煙幕散布"
+                },
+                "description": "After battle begins and 15% (30%) chance to activate every 15s after that: deploy a smokescreen for 5s. Escort ships within the smokescreen have 20% (40%) additional evasion rate. Does not stack with same skill effect.",
+                "color": "deepskyblue"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/263/interferencekai.png",
+                "names": {
+                    "en": "(Retrofit) Interference",
+                    "cn": "火力干扰",
+                    "jp": "かく乱射撃"
+                },
+                "description": "Every 20s: 25% chance to reduce a random enemy's Reload by 30% and damage by 15% for 5s (10s). Effect prioritizes elite (human-form) enemies. Does not stack with the same skill.",
+                "color": "gold"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/263/all_out_assault.png",
+                "names": {
+                    "en": "All Out Assault",
+                    "cn": "全弹发射",
+                    "jp": "全弾発射-ベンソン級"
+                },
+                "description": "Every 15 (10) times the main gun is fired, triggers All Out Assault - Benson Class I (II).",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Gained All Out Assault I",
+                "Main Gun Efficiency +5%"
+            ],
+            [
+                "Max Torpedo Capacity +1",
+                "Pre-Loaded Torpedo +1",
+                "Main Gun Efficiency +10%"
+            ],
+            [
+                "Upgrades All Out Assault I→II",
+                "All Weapon Efficiency +5%",
+                "Main gun shots required to trigger All-Out Assault halved"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Destroyer",
+                        "Guided-missile destroyer"
+                    ],
+                    "bonus": "+1",
+                    "stat": "antiair"
+                }
+            },
+            "techPoints": {
+                "collection": 6,
+                "maxLimitBreak": 12,
+                "maxLevel": 9,
+                "total": 27
+            }
+        },
+        "retrofit": true,
+        "retrofitId": "3263",
+        "retrofitProjects": {
+            "A": {
+                "id": "Hull Improvement Ⅰ",
+                "attributes": [
+                    "\"Health\" +60"
+                ],
+                "materials": [
+                    "2x \"DestroyerT1BP\""
+                ],
+                "coins": 300,
+                "level": 1,
+                "levelBreakLevel": 0,
+                "levelBreakStars": "★★☆☆☆",
+                "recurrence": 1,
+                "require": []
+            },
+            "B": {
+                "id": "Reload Enhancement Ⅰ",
+                "attributes": [
+                    "\"Reload\" +5"
+                ],
+                "materials": [
+                    "2x \"DestroyerT1BP\""
+                ],
+                "coins": 400,
+                "level": 5,
+                "levelBreakLevel": 0,
+                "levelBreakStars": "★★☆☆☆",
+                "recurrence": 1,
+                "require": [
+                    "A"
+                ]
+            },
+            "C": {
+                "id": "Torpedo Improvement Ⅰ",
+                "attributes": [
+                    "Equip 2 Efficiency +5.0%"
+                ],
+                "materials": [
+                    "3x \"DestroyerT1BP\""
+                ],
+                "coins": 600,
+                "level": 20,
+                "levelBreakLevel": 1,
+                "levelBreakStars": "★★★☆☆",
+                "recurrence": 1,
+                "require": [
+                    "A"
+                ]
+            },
+            "D": {
+                "id": "Anti-Air Enhancement Ⅰ",
+                "attributes": [
+                    "\"Anti-air\" +15"
+                ],
+                "materials": [
+                    "3x \"DestroyerT1BP\""
+                ],
+                "coins": 800,
+                "level": 25,
+                "levelBreakLevel": 1,
+                "levelBreakStars": "★★★☆☆",
+                "recurrence": 1,
+                "require": [
+                    "C"
+                ]
+            },
+            "E": {
+                "id": "Main Gun Improvement Ⅰ",
+                "attributes": [
+                    "Equip 1 Efficiency +5.0%"
+                ],
+                "materials": [
+                    "3x \"DestroyerT1BP\""
+                ],
+                "coins": 1000,
+                "level": 35,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 1,
+                "require": [
+                    "C"
+                ]
+            },
+            "F": {
+                "id": "Reload Enhancement Ⅱ",
+                "attributes": [
+                    "\"Reload\" +5 / \"Reload\" +10"
+                ],
+                "materials": [
+                    "2 / 2x \"DestroyerT1BP\""
+                ],
+                "coins": 1200,
+                "level": 40,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 2,
+                "require": [
+                    "B",
+                    "E"
+                ]
+            },
+            "G": {
+                "id": "Hull Improvement Ⅱ",
+                "attributes": [
+                    "\"Health\" +60 / \"Health\" +90"
+                ],
+                "materials": [
+                    "1 / 2x \"DestroyerT2BP\""
+                ],
+                "coins": 1500,
+                "level": 50,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 2,
+                "require": [
+                    "E"
+                ]
+            },
+            "H": {
+                "id": "Tactical Learning",
+                "attributes": [
+                    "Unlock Skill \"Interference\""
+                ],
+                "materials": [
+                    "3x \"DestroyerT2BP\""
+                ],
+                "coins": 1800,
+                "level": 55,
+                "levelBreakLevel": 2,
+                "levelBreakStars": "★★★★☆",
+                "recurrence": 1,
+                "require": [
+                    "G"
+                ]
+            },
+            "I": {
+                "id": "Motor Enhancement",
+                "attributes": [
+                    "Spd +3"
+                ],
+                "materials": [
+                    "3x \"DestroyerT2BP\""
+                ],
+                "coins": 2000,
+                "level": 70,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 1,
+                "require": [
+                    "G",
+                    "J"
+                ]
+            },
+            "J": {
+                "id": "Anti-Air Enhancement Ⅱ",
+                "attributes": [
+                    "\"Anti-air\" +15 / \"Anti-air\" +25"
+                ],
+                "materials": [
+                    "2 / 2x \"DestroyerT2BP\""
+                ],
+                "coins": 2500,
+                "level": 75,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 2,
+                "require": [
+                    "D"
+                ]
+            },
+            "K": {
+                "id": "Modernization",
+                "attributes": [
+                    "\"Firepower\" +15",
+                    "\"Anti-air\" +35"
+                ],
+                "materials": [
+                    "1x \"DestroyerT3BP\"",
+                    "1x \"Bailey\" or \"Universal Bulin\""
+                ],
+                "coins": 3000,
+                "level": 85,
+                "levelBreakLevel": 3,
+                "levelBreakStars": "★★★★★",
+                "recurrence": 1,
+                "require": [
+                    "H",
+                    "I",
+                    "J"
+                ]
+            }
+        },
+        "retrofitHullType": "Destroyer",
+        "construction": {
+            "constructionTime": "Cannot Be Constructed",
+            "availableIn": {
+                "light": false,
+                "heavy": false,
+                "aviation": false,
+                "limited": false,
+                "exchange": "Guild Shop"
+            }
+        },
+        "obtainedFrom": {
+            "obtainedFrom": "Can be received as a monthly login reward\nAvailable from the Guild Shop for 2000 \"Guild Token\" Guild Tokens",
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "团子",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#团子",
+                    "Pixiv": "https://www.pixiv.net/member.php?id=7703737",
+                    "Twitter": "https://twitter.com/Tsundere_dango",
+                    "Link": "https://weibo.com/soramiao"
+                }
+            },
+            "voice": {
+                "name": "Eri Suzuki",
+                "url": "https://en.wikipedia.org/wiki/Eri_Suzuki"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/fb/BaileyIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/7/73/BaileyChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/49/BaileyBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Retrofit",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Retrofit/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Retrofit/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Retrofit",
+                    "category": "Retrofit",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/b/b6/BaileyKaiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f5/BaileyKaiChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/9e/BaileyKaiBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Trickster Black Rabbit",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Trickster_Black_Rabbit/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Trickster_Black_Rabbit/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Halloween - Finish the \"Mischievous Halloween\" questline",
+                    "category": "Event",
+                    "enClient": "Trickster Black Rabbit",
+                    "enLimited": "Permanent Event",
+                    "cnClient": "捣蛋黑兔",
+                    "cnLimited": "Permanent Event",
+                    "jpClient": "トリッキーベイリー",
+                    "jpLimited": "Permanent Event",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/a7/BaileyHalloweenIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/e2/BaileyHalloweenChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/ae/BaileyHalloweenBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Jolly Saint Bunnylass!",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Jolly_Saint_Bunnylass/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_125.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Jolly_Saint_Bunnylass/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Christmas",
+                    "enClient": "Jolly Saint Bunnylass!",
+                    "enLimited": "Limited",
+                    "cnClient": "圣诞兔兔驾到！",
+                    "cnLimited": "Limited",
+                    "jpClient": "ウサウササンタさん！",
+                    "jpLimited": "Limited",
+                    "cost": 800,
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/0d/BaileyChristmasIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/29/BaileyChristmasChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f4/BaileyChristmasBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/263/Jolly_Saint_Bunnylass/image.png"
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Terror, Bailey, Vampire",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.10.29_4.png"
+            }
+        ]
+    },
+    {
+        "wikiUrl": "https://azurlane.koumakan.jp/wiki/Baltimore",
+        "id": "050",
+        "_gid": 10316,
+        "_sid": [
+            103161,
+            103162,
+            103163,
+            103164,
+            900301,
+            900330
+        ],
+        "_code": 50,
+        "names": {
+            "en": "Baltimore",
+            "code": "USS Baltimore",
+            "cn": "巴尔的摩",
+            "jp": "ボルチモア",
+            "kr": "볼티모어",
+            "tw": "巴爾的摩"
+        },
+        "exists": {
+            "en": true,
+            "cn": true,
+            "jp": true,
+            "kr": true
+        },
+        "hexagon": [
+            3,
+            0,
+            0,
+            2,
+            3,
+            4
+        ],
+        "class": "Baltimore",
+        "nationality": "Eagle Union",
+        "hullType": "Heavy Cruiser",
+        "thumbnail": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/thumbnail.png",
+        "rarity": "Super Rare",
+        "stars": 6,
+        "stats": {
+            "baseStats": {
+                "health": "793",
+                "armor": "Medium",
+                "reload": "68",
+                "luck": "56",
+                "firepower": "50",
+                "torpedo": "0",
+                "evasion": "9",
+                "speed": "26",
+                "antiair": "49",
+                "aviation": "0",
+                "oilConsumption": "4",
+                "accuracy": "45",
+                "antisubmarineWarfare": "0"
+            },
+            "level100": {
+                "health": "4167",
+                "armor": "Medium",
+                "reload": "174",
+                "luck": "56",
+                "firepower": "256",
+                "torpedo": "0",
+                "evasion": "49",
+                "speed": "26",
+                "antiair": "238",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "121",
+                "antisubmarineWarfare": "0"
+            },
+            "level120": {
+                "health": "4591",
+                "armor": "Medium",
+                "reload": "184",
+                "luck": "56",
+                "firepower": "270",
+                "torpedo": "0",
+                "evasion": "57",
+                "speed": "26",
+                "antiair": "260",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "136",
+                "antisubmarineWarfare": "0"
+            },
+            "level125": {
+                "health": "4697",
+                "armor": "Medium",
+                "reload": "186",
+                "luck": "56",
+                "firepower": "274",
+                "torpedo": "0",
+                "evasion": "59",
+                "speed": "26",
+                "antiair": "266",
+                "aviation": "0",
+                "oilConsumption": "12",
+                "accuracy": "139",
+                "antisubmarineWarfare": "0"
+            }
+        },
+        "slots": [
+            {
+                "maxEfficiency": 130,
+                "minEfficiency": 110,
+                "type": "CA Guns",
+                "max": 2
+            },
+            {
+                "maxEfficiency": 75,
+                "minEfficiency": 70,
+                "type": "DD Guns",
+                "max": 1
+            },
+            {
+                "maxEfficiency": 135,
+                "minEfficiency": 130,
+                "type": "Anti-Air Guns",
+                "max": 1
+            }
+        ],
+        "enhanceValue": {
+            "firepower": 28,
+            "torpedo": 0,
+            "aviation": 0,
+            "reload": 13
+        },
+        "scrapValue": {
+            "coin": 18,
+            "medal": 10
+        },
+        "skills": [
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/050/apsolute_ammunition.png",
+                "names": {
+                    "en": "APsolute Ammunition",
+                    "cn": "Final-AP-Ride",
+                    "jp": "Final-AP-Ride"
+                },
+                "description": "Change the ammo type of this ship's main guns to Special AP (damage modifiers scale with skill level). Additionally, at Level 8 and higherThis additional effect is not mentioned in-game at allAdditionally, at Level 8 and higher[a], each Special AP shell has a 3.5% chance to inflict Armor Break to enemies with heavy armor.(This Special AP has 75/110/75 (85/120/85) modifiers. Armor Break causes enemies to take 8% more damage for 6s, and does not stack with most sources of armor break, such as from AP BB guns.)",
+                "color": "pink"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/050/adaptive_tactics.png",
+                "names": {
+                    "en": "Adaptive Tactics",
+                    "cn": "多面手",
+                    "jp": "マルチプルタクティクス"
+                },
+                "description": "When sortied with at least one Eagle Union CV or CVL, increase your fleet's AA by 2.5% (7.0%), and increase AVI for all Eagle Union CVs and CVLs in your fleet by 5.0% (15.0%). If sortied without any Eagle Union CVs or CVLs, increase this ship's FP by 4.5% (12.0%) and EVA by 5.0% (15.0%).",
+                "color": "gold"
+            },
+            {
+                "icon": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skills/050/all_out_assault.png",
+                "names": {
+                    "en": "All Out Assault",
+                    "cn": "全弹发射",
+                    "jp": "全弾発射-ボルチモア級"
+                },
+                "description": "Every 12 (8) times the main gun is fired, triggers All Out Assault - Baltimore-class I (II).",
+                "color": "pink"
+            }
+        ],
+        "limitBreaks": [
+            [
+                "Gains All Out Assault: I",
+                "Main Gun Efficiency +5%"
+            ],
+            [
+                "Main Gun Mount +1",
+                "Main Gun Efficiency +10%"
+            ],
+            [
+                "Upgrade All Out Assault: I → II",
+                "All Weapon Efficiency +5%"
+            ]
+        ],
+        "fleetTech": {
+            "statsBonus": {
+                "collection": {
+                    "applicable": [
+                        "Heavy cruiser",
+                        "Large cruiser",
+                        "Monitor"
+                    ],
+                    "bonus": "+1",
+                    "stat": "health"
+                },
+                "maxLevel": {
+                    "applicable": [
+                        "Heavy cruiser",
+                        "Large cruiser",
+                        "Monitor"
+                    ],
+                    "bonus": "+1",
+                    "stat": "firepower"
+                }
+            },
+            "techPoints": {
+                "collection": 15,
+                "maxLimitBreak": 30,
+                "maxLevel": 23,
+                "total": 68
+            }
+        },
+        "construction": {
+            "constructionTime": "02:00:00",
+            "availableIn": {
+                "light": false,
+                "heavy": true,
+                "aviation": false,
+                "limited": "Only during the Ashen Simulacrum event",
+                "exchange": false
+            }
+        },
+        "obtainedFrom": {
+            "obtainedFrom": "Available in Limited Construction during the \"Ashen Simulacrum\" event",
+            "fromMaps": []
+        },
+        "misc": {
+            "artist": {
+                "name": "feng ze",
+                "urls": {
+                    "Wiki": "https://azurlane.koumakan.jp/wiki/Artists#feng_ze",
+                    "Pixiv": "https://www.pixiv.net/member.php?id=2117317",
+                    "Link": "http://weibo.com/u/6098698509"
+                }
+            },
+            "voice": {
+                "name": "Minami Takahashi",
+                "url": "https://en.wikipedia.org/wiki/Minami_Takahashi_(voice_actress)"
+            }
+        },
+        "skins": [
+            {
+                "name": "Default",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Default/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Default/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "category": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/6/6e/BaltimoreIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/e/e9/BaltimoreChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/d6/BaltimoreBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Muse",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Muse/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/MainDayBG.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Muse/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Default",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/59/Baltimore_%C2%B5Icon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/9b/Baltimore_%C2%B5ChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/a/a0/Baltimore_%C2%B5Banner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Muse/image.png"
+            },
+            {
+                "name": "After-School Ace",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/AfterSchool_Ace/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_103.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/AfterSchool_Ace/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "School",
+                    "enClient": "After-School Ace",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "放学后的ACE",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "エースの放課後",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Ashen Simulacrum",
+                    "cost": 880,
+                    "sharedWith": "Baltimore µ",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/f8/BaltimoreSchoolIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/d7/BaltimoreSchoolChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/4/43/BaltimoreSchoolBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Black Ace",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Black_Ace/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_132.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Black_Ace/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Sport",
+                    "enClient": "Black Ace",
+                    "enLimited": "Limited",
+                    "cnClient": "Black Ace",
+                    "cnLimited": "Limited",
+                    "jpClient": "ブラックエース",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Microlayer Medley",
+                    "cost": 900,
+                    "sharedWith": "Baltimore µ",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/0/06/BaltimoreSportIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/5/51/BaltimoreSportChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/9/93/BaltimoreSportBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Evening Breeze Minuet",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Evening_Breeze_Minuet/image.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_135.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Evening_Breeze_Minuet/chibi.png",
+                "info": {
+                    "live2dModel": true,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Party",
+                    "enClient": "Evening Breeze Minuet",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "夜风Minuet",
+                    "cnLimited": "Limited",
+                    "jpClient": "夜風Minuet",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Lights of Circle City",
+                    "cost": 1200,
+                    "sharedWith": "Baltimore µ",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/28/BaltimorePartyIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/3/31/BaltimorePartyChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/c/cd/BaltimorePartyBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Ace's Travel Journal",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Aces_Travel_Journal/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_142.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Aces_Travel_Journal/chibi.png",
+                "info": {
+                    "live2dModel": false,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "New Year",
+                    "enClient": "Ace's Travel Journal",
+                    "enLimited": "Permanently Available",
+                    "cnClient": "ACE的旅行记",
+                    "cnLimited": "Permanently Available",
+                    "jpClient": "エースの旅紀行",
+                    "jpLimited": "Permanently Available",
+                    "firstIntroduced": "Ashen Simulacrum (Rerun)",
+                    "cost": 880,
+                    "sharedWith": "Baltimore µ",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/d/df/BaltimoreNew_YearIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/f/fb/BaltimoreNew_YearChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/2/22/BaltimoreNew_YearBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Aces_Travel_Journal/image.png"
+            },
+            {
+                "name": "Finish Line Flagbearer",
+                "image": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Finish_Line_Flagbearer/image.nobg.png",
+                "background": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/backgrounds/Skin_BG_132.png",
+                "chibi": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Finish_Line_Flagbearer/chibi.png",
+                "info": {
+                    "live2dModel": true,
+                    "obtainedFrom": "Skin Shop",
+                    "category": "Race Queen",
+                    "enClient": "Finish Line Flagbearer",
+                    "enLimited": "Limited",
+                    "cnClient": "迅疾的蓝星",
+                    "cnLimited": "Limited",
+                    "jpClient": "スプレンディッド・ギア",
+                    "jpLimited": "Limited",
+                    "firstIntroduced": "Manjuu Grand Prix",
+                    "cost": 1200,
+                    "sharedWith": "Baltimore µ",
+                    "icons": [
+                        {
+                            "url": "https://azurlane.netojuu.com/images/3/39/BaltimoreRaceQueenIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/1/1e/BaltimoreRaceQueenChibiIcon.png",
+                            "urlType": "icon"
+                        },
+                        {
+                            "url": "https://azurlane.netojuu.com/images/7/71/BaltimoreRaceQueenBanner.png",
+                            "urlType": "banner"
+                        }
+                    ]
+                },
+                "bg": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/050/Finish_Line_Flagbearer/image.png"
+            }
+        ],
+        "gallery": [
+            {
+                "description": "Baltimore, Anchorage, and Bremerton",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.09.22_3.png"
+            },
+            {
+                "description": "Baltimore and Bremerton",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.01.06_5.png"
+            },
+            {
+                "description": "Bache, Baltimore, St. Louis, Laffey (far back), Nicholas (far back), Anchorage, San Francisco",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2022.01.27_1.png"
+            },
+            {
+                "description": "Bremerton, Baltimore",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.09.30_6.png"
+            },
+            {
+                "description": "Bache, Baltimore, Prinz Eugen",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2021.05.27_11.png"
+            },
+            {
+                "description": "Baltimore, Reno, Bremerton",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.02.04_11.png"
+            },
+            {
+                "description": "Bremerton, Bache, Baltimore",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.09.24_7.png"
+            },
+            {
+                "description": "Baltimore, Sirius, Massachusetts, Taihou, Belfast",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_2020.09.17_2.png"
+            },
+            {
+                "description": "Baltimore, Alabama",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_ashen_2.png"
+            },
+            {
+                "description": "Cavalla, Alabama, Baltimore, San Juan, Aylwin and Birmingham",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Bg_ashen_1.png"
+            },
+            {
+                "description": "After-School Ace Baltimore and Bremerton by Halcon – the end card of Episode 2 of the Slow Ahead! anime",
+                "url": "https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/gallery/Slow_Ahead_Episode_2_End_Card.jpg"
+            }
+        ]
+    }
+]

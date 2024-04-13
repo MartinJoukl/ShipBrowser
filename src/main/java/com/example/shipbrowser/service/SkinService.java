@@ -58,4 +58,7 @@ public class SkinService {
         pageRequest = pageRequest.withSort(pageRequest.getSort().and(Sort.by(Sort.Direction.ASC, "id")));
         return skinRepository.findAll(createFilterQuery(criteria), pageRequest);
     }
+    public List<Skin> listAllShipSkins(long shipId){
+        return skinRepository.findAllByShipId(shipId);
+    }
 }

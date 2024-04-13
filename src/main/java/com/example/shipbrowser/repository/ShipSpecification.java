@@ -12,12 +12,12 @@ public class ShipSpecification {
             List<Predicate> predicates = new ArrayList<>();
 
             if (shipSearchCriteria.getCode() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("code"), shipSearchCriteria.getCode());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("code")), shipSearchCriteria.getCode().toLowerCase());
                 predicates.add(predicate);
             }
 
             if (shipSearchCriteria.getName() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("name"), shipSearchCriteria.getName());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("name")), shipSearchCriteria.getName().toLowerCase());
                 predicates.add(predicate);
             }
 
@@ -27,7 +27,7 @@ public class ShipSpecification {
             }
 
             if (shipSearchCriteria.getNationality() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("nationality"), shipSearchCriteria.getNationality());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("nationality")), shipSearchCriteria.getNationality().toLowerCase());
                 predicates.add(predicate);
             }
 
@@ -37,7 +37,7 @@ public class ShipSpecification {
             }
 
             if (shipSearchCriteria.getShipClass() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("shipClass"), shipSearchCriteria.getShipClass());
+                Predicate predicate = criteriaBuilder.equal(criteriaBuilder.lower(root.get("shipClass")), shipSearchCriteria.getShipClass().toLowerCase());
                 predicates.add(predicate);
             }
 

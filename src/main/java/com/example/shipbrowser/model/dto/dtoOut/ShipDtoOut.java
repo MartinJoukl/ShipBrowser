@@ -19,7 +19,6 @@ public class ShipDtoOut extends DtoOut {
     private String hullType;
     private String rarity;
     private List<SkillDtoOut> skills;
-    private String thumbnailLink;
     private String constructionTime;
     private String obtainedFrom;
     private List<SkinDtoOut> skins;
@@ -35,7 +34,6 @@ public class ShipDtoOut extends DtoOut {
         this.hullType = ship.getHullType().getName();
         this.rarity = ship.getRarity().getName();
         this.skills = ship.getSkills().stream().map(SkillDtoOut::new).toList();
-        this.thumbnailLink = ship.getThumbnailLink();
         this.constructionTime = ship.getConstructionTime();
         this.obtainedFrom = ship.getObtainedFrom();
         this.skins = ship.getSkins().stream().map(SkinDtoOut::new).toList();

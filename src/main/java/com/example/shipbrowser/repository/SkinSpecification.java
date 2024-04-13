@@ -12,17 +12,17 @@ public class SkinSpecification {
             List<Predicate> predicates = new ArrayList<>();
 
             if (skinSearchCriteria.getName() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("name"), skinSearchCriteria.getName());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(criteriaBuilder.lower(root.get("name"))), skinSearchCriteria.getName().toLowerCase());
                 predicates.add(predicate);
             }
 
             if (skinSearchCriteria.getShipName() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("ship").get("name"), skinSearchCriteria.getShipName());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("ship").get("name")), skinSearchCriteria.getShipName().toLowerCase());
                 predicates.add(predicate);
             }
 
             if (skinSearchCriteria.getShipCode() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("ship").get("code"), skinSearchCriteria.getShipCode());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("ship").get("code")), skinSearchCriteria.getShipCode().toLowerCase());
                 predicates.add(predicate);
             }
 
@@ -32,17 +32,17 @@ public class SkinSpecification {
             }
 
             if (skinSearchCriteria.getShipNationality() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("ship").get("nationality"), skinSearchCriteria.getShipNationality());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("ship").get("nationality")), skinSearchCriteria.getShipNationality().toLowerCase());
                 predicates.add(predicate);
             }
 
             if (skinSearchCriteria.getShipRarity() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("ship").get("rarity"), skinSearchCriteria.getShipRarity());
+                Predicate predicate = criteriaBuilder.equal(criteriaBuilder.lower(root.get("ship").get("rarity")), skinSearchCriteria.getShipRarity());
                 predicates.add(predicate);
             }
 
             if (skinSearchCriteria.getShipShipClass() != null) {
-                Predicate predicate = criteriaBuilder.equal(root.get("ship").get("shipClass"), skinSearchCriteria.getShipShipClass());
+                Predicate predicate = criteriaBuilder.equal(criteriaBuilder.lower(root.get("ship").get("shipClass")), skinSearchCriteria.getShipShipClass().toLowerCase());
                 predicates.add(predicate);
             }
 
