@@ -53,7 +53,7 @@ public class RestConfig {
         http
                 .authorizeHttpRequests((authorize) -> authorize.
                         requestMatchers(
-                                "listShips", "getShip", "listSkins", "getShipImage", "listSkinsByShipId", "getSkinImage", "getSkinBackground", "getSkinChibi").permitAll()
+                                "listShips", "getShip", "listSkins", "getShipImage", "listSkinsByShipId", "getSkinImage", "getSkinBackground", "getSkinChibi", "getSkillImage").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated()
                 )
