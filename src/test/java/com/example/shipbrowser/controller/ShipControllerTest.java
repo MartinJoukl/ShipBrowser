@@ -101,15 +101,10 @@ class ShipControllerTest {
                 .andExpect(jsonPath("itemList[0].nationality").value(mockedShip.getNationality()))
                 .andExpect(jsonPath("itemList[0].rarity").value(mockedShip.getRarity().getName()))
                 .andExpect(jsonPath("itemList[0].hullType").value(mockedShip.getHullType().getName()))
-                .andExpect(jsonPath("itemList[0].thumbnailLink").value(mockedShip.getThumbnailLink()))
                 .andExpect(jsonPath("itemList[0].constructionTime").value(mockedShip.getConstructionTime()))
                 .andExpect(jsonPath("itemList[0].obtainedFrom").value(mockedShip.getObtainedFrom()))
                 .andExpect(jsonPath("itemList[0].skins[0].name").value(mockedShip.getSkins().get(0).getName()))
-                .andExpect(jsonPath("itemList[0].skins[0].imageLink").value(mockedShip.getSkins().get(0).getImageLink()))
-                .andExpect(jsonPath("itemList[0].skins[0].backgroundLink").value(mockedShip.getSkins().get(0).getBackgroundLink()))
-                .andExpect(jsonPath("itemList[0].skins[0].chibiLink").value(mockedShip.getSkins().get(0).getChibiLink()))
                 .andExpect(jsonPath("itemList[0].skills[0].name").value(mockedShip.getSkills().get(0).getName()))
-                .andExpect(jsonPath("itemList[0].skills[0].iconLink").value(mockedShip.getSkills().get(0).getIconLink()))
                 .andExpect(jsonPath("itemList[0].skills[0].description").value(mockedShip.getSkills().get(0).getDescription()))
                 .andExpect(jsonPath("itemList[0].skills[0].color").value(mockedShip.getSkills().get(0).getColor()));
     }

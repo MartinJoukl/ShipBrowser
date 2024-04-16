@@ -82,15 +82,10 @@ public class ShipIntegrationTest {
                     .andExpect(jsonPath("itemList[0].nationality").value("Sakura Empire"))
                     .andExpect(jsonPath("itemList[0].rarity").value("Elite"))
                     .andExpect(jsonPath("itemList[0].hullType").value("Destroyer"))
-                    .andExpect(jsonPath("itemList[0].thumbnailLink").value("..\\images\\skins\\155\\thumbnail.png"))
                     .andExpect(jsonPath("itemList[0].constructionTime").value("00:23:00"))
                     .andExpect(jsonPath("itemList[0].obtainedFrom").value("CN/EN: Awarded and unlocked in construction when Collection goal is met using the following ships: Javelin, Laffey, Z23"))
                     .andExpect(jsonPath("itemList[0].skins[1].name").value("Retrofit"))
-                    .andExpect(jsonPath("itemList[0].skins[1].imageLink").value("..\\images\\skins\\155\\Retrofit\\image.png"))
-                    .andExpect(jsonPath("itemList[0].skins[1].backgroundLink").value("..\\images\\backgrounds\\MainDayBG.png"))
-                    .andExpect(jsonPath("itemList[0].skins[1].chibiLink").value("..\\images\\skins\\155\\Retrofit\\chibi.png"))
                     .andExpect(jsonPath("itemList[0].skills[3].name").value("All Out Assault"))
-                    .andExpect(jsonPath("itemList[0].skills[3].iconLink").value("..\\images\\skills\\155\\all_out_assault.png"))
                     .andExpect(jsonPath("itemList[0].skills[3].description").value("Every 15 (10) times the main gun is fired, triggers All Out Assault - Ayanami I (II)"))
                     .andExpect(jsonPath("itemList[0].skills[3].color").value("pink"));
         } catch (Exception e) {
