@@ -37,7 +37,7 @@ public class ShipSpecification {
             }
 
             if (shipSearchCriteria.getShipClass() != null) {
-                Predicate predicate = criteriaBuilder.equal(criteriaBuilder.lower(root.get("shipClass")), shipSearchCriteria.getShipClass().toLowerCase());
+                Predicate predicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("shipClass")), shipSearchCriteria.getShipClass().toLowerCase());
                 predicates.add(predicate);
             }
 
