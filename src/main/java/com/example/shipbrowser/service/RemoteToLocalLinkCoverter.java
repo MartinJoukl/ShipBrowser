@@ -42,4 +42,8 @@ public class RemoteToLocalLinkCoverter {
 
         return Path.of(imagesBaseLocation, determinedImagePath);
     }
+
+    public Path getImagesBaseLocation() {
+        return Path.of(imagesBaseLocation);
+    }
 }
