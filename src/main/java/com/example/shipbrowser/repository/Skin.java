@@ -35,7 +35,7 @@ public class Skin {
     @Column
     private String category;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
     @NotNull
     private Ship ship;
 

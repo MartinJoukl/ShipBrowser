@@ -51,7 +51,6 @@ public class ShipService {
         mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, false).configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         DownloadedShipEntityDtoIn[] shipsFromResponse = mapper.readValue(response, DownloadedShipEntityDtoIn[].class);
-
         List<Ship> newShips = new ArrayList<>();
         List<Ship> updatedShips = new ArrayList<>();
         List<Skin> skinsToDelete = new ArrayList<>();

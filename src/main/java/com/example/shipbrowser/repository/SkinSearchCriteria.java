@@ -14,4 +14,5 @@ public class SkinSearchCriteria {
 
     private HullType shipHullType;
     private Rarity shipRarity;
+    private boolean includeDefaultAndRetrofit;
 }

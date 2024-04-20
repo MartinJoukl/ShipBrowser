@@ -12,6 +12,7 @@ import lombok.EqualsAndHashCode;
 @Data
 public class ListSkinCriteriaDtoIn extends DtoIn {
     private String name;
+    private boolean includeDefaultAndRetrofit;
     @Valid
     private ListShipsSearchCriteriaDtoIn ship;
 
@@ -19,10 +20,13 @@ public class ListSkinCriteriaDtoIn extends DtoIn {
     public SkinSearchCriteria toDbCriteria() {
         SkinSearchCriteria criteria = new SkinSearchCriteria();
         criteria.setName(name);
+        criteria.setIncludeDefaultAndRetrofit(includeDefaultAndRetrofit);
         if (ship != null) {
+            criteria.setShipName(ship.getName());
             criteria.setShipCode(ship.getCode());
             criteria.setShipShipClass(ship.getShipClass());
             criteria.setShipNationality(ship.getNationality());
+            criteria.setIncludeDefaultAndRetrofit(includeDefaultAndRetrofit);
             if (ship.getHullType() != null && !ship.getHullType().isBlank()) {
                 criteria.setShipHullType(HullType.fromString(ship.getHullType()));
             }

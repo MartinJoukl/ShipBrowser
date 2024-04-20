@@ -15,7 +15,7 @@ public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(optional = false)
+    @ManyToOne
     @NotNull
     private Ship ship;
 
