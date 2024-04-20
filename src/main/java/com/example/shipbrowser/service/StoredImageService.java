@@ -71,9 +71,10 @@ public class StoredImageService {
         System.out.println("Started generating images");
         Path currentPath = Path.of(remoteToLocalLinkCoverter.getImagesBaseLocation().toString(), "skins");
         if (Files.isDirectory(currentPath)) {
-            try (Stream<Path> paths = Files.walk(currentPath)) {
+            try (Stream<Path> paths = Files.walk(currentPath, 1)) {
                 paths
                         .filter(Files::isDirectory)
+                        .skip(1)
                         .forEach((this::createPreviewOfSkinsInDir));
             }
         }
@@ -82,23 +83,23 @@ public class StoredImageService {
 
     private void createPreviewOfSkinsInDir(Path path) {
         try {
-            try (Stream<Path> paths = Files.walk(path)) {
+            try (Stream<Path> paths = Files.walk(path, 1)) {
                 paths
                         .filter(Files::isDirectory)
+                        .skip(1)
                         .forEach((skinDirectory) -> {
                             try {
-                                System.out.println(path.toString());
-                                BufferedImage skinImage = ImageIO.read(new File(Path.of(path.toString(), "image.png").toUri()));
-                                BufferedImage resizedImage = Scalr.resize(skinImage, 512);
-                                File outputfile = new File(Path.of(path.toString(), "preview.png").toUri());
+                                BufferedImage skinImage = ImageIO.read(new File(Path.of(skinDirectory.toString(), "image.png").toUri()));
+                                BufferedImage resizedImage = Scalr.resize(skinImage, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, 300);
+                                File outputfile = new File(Path.of(skinDirectory.toString(), "preview.png").toUri());
                                 ImageIO.write(resizedImage, "png", outputfile);
                             } catch (IOException e) {
+                                System.out.println("Creating of preview failed for " + skinDirectory);
                                 throw new RuntimeException(e);
                             }
                         });
             }
-        } catch (Exception e) {
-            System.out.println("Creating of preview failed for " + path.toString());
+        } catch (Exception ignored) {
         }
     }
 }
