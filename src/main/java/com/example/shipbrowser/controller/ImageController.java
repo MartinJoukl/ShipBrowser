@@ -6,10 +6,7 @@ import com.example.shipbrowser.model.dto.dtoOut.DtoOut;
 import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.repository.Skill;
 import com.example.shipbrowser.repository.Skin;
-import com.example.shipbrowser.service.ShipService;
-import com.example.shipbrowser.service.SkillService;
-import com.example.shipbrowser.service.SkinService;
-import com.example.shipbrowser.service.StoredImageService;
+import com.example.shipbrowser.service.*;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
@@ -18,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Optional;
 
 @CrossOrigin(
@@ -37,12 +35,14 @@ public class ImageController {
     private ShipService shipService;
     private SkinService skinService;
     private SkillService skillService;
+    private RemoteToLocalLinkCoverter remoteToLocalLinkCoverter;
 
-    public ImageController(StoredImageService storedImageService, ShipService shipService, SkinService skinService, SkillService skillService) {
+    public ImageController(StoredImageService storedImageService, ShipService shipService, SkinService skinService, SkillService skillService, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         this.shipService = shipService;
         this.skinService = skinService;
         this.storedImageService = storedImageService;
         this.skillService = skillService;
+        this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
     }
 
     @PostMapping("createSkinImagesPreviews")
@@ -92,6 +92,29 @@ public class ImageController {
                 .body(inputStream);
     }
 
+    @GetMapping(value = "getSkinImagePreview", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<Resource> getSkinImagePreview(@RequestParam long id) {
+        ByteArrayResource inputStream;
+        try {
+            Optional<Skin> skin = skinService.getBySkinId(id);
+            if (skin.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            inputStream = storedImageService.getImage(
+                    remoteToLocalLinkCoverter.getSkinPreviewLocation(
+                            Path.of(skin.get().getImageLink())
+                    ).toString()
+            );
+        } catch (IOException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
     @GetMapping(value = "getSkinBackground", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<Resource> getSkinBackground(@RequestParam long id) {
         ByteArrayResource inputStream;
@@ -101,6 +124,29 @@ public class ImageController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
             inputStream = storedImageService.getImage(skin.get().getBackgroundLink());
+        } catch (IOException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .contentLength(inputStream.contentLength())
+                .body(inputStream);
+    }
+
+    @GetMapping(value = "getSkinBackgroundPreview", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<Resource> getSkinBackgroundPreview(@RequestParam long id) {
+        ByteArrayResource inputStream;
+        try {
+            Optional<Skin> skin = skinService.getBySkinId(id);
+            if (skin.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+            inputStream = storedImageService.getImage(
+                    remoteToLocalLinkCoverter.getBackgroundPreviewLocation(
+                            Path.of(skin.get().getBackgroundLink())
+                    ).toString()
+            );
         } catch (IOException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }

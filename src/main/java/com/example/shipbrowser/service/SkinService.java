@@ -61,4 +61,8 @@ public class SkinService {
     public List<Skin> listAllShipSkins(long shipId){
         return skinRepository.findAllByShipId(shipId);
     }
+
+    public List<Skin> getAllSkins(){
+        return skinRepository.findAll();
+    }
 }

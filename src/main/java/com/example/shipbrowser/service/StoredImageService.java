@@ -1,5 +1,6 @@
 package com.example.shipbrowser.service;
 
+import com.example.shipbrowser.repository.Skin;
 import com.example.shipbrowser.repository.StoredImage;
 import com.example.shipbrowser.repository.StoredImageRepository;
 import org.imgscalr.Scalr;
@@ -9,29 +10,28 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
 import javax.imageio.ImageIO;
-import javax.naming.spi.DirectoryManager;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Stream;
 
 @Service
 public class StoredImageService {
     private final StoredImageRepository storedImageRepository;
+    private final SkinService skinService;
     private final HttpClient httpClient;
 
     private final RemoteToLocalLinkCoverter remoteToLocalLinkCoverter;
 
-    public StoredImageService(StoredImageRepository storedImageRepository, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
+    public StoredImageService(StoredImageRepository storedImageRepository, SkinService skinService, HttpClient httpClient, RemoteToLocalLinkCoverter remoteToLocalLinkCoverter) {
         this.storedImageRepository = storedImageRepository;
         this.httpClient = httpClient;
         this.remoteToLocalLinkCoverter = remoteToLocalLinkCoverter;
+        this.skinService = skinService;
     }
 
     //https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/images/skins/Collab057/Summer_Vacation/chibi.png
@@ -66,65 +66,46 @@ public class StoredImageService {
     }
 
     @Async
-    public void createSkinPreviews(boolean regenerate) throws IOException {
-        System.out.println("Started generating images");
-        Path currentPath = Path.of(remoteToLocalLinkCoverter.getImagesBaseLocation().toString(), "skins");
-        if (Files.isDirectory(currentPath)) {
-            try (Stream<Path> paths = Files.walk(currentPath, 1)) {
-                paths
-                        .filter(Files::isDirectory)
-                        .skip(1)
-                        .forEach(((path) -> createPreviewOfSkinsInDir(path, regenerate)));
-            }
+    public void createSkinPreviews(boolean regenerate) {
+        List<Skin> skins = skinService.getAllSkins();
+        Set<String> backgrounds = new HashSet<>();
+        System.out.println("Image generation started");
+        for (Skin skin : skins) {
+            createPreviewOfSkinsInDir(Path.of(skin.getImageLink()), regenerate);
+            backgrounds.add(skin.getBackgroundLink());
         }
         System.out.println("Image generation ended");
         System.out.println("Started generating image backgrounds");
-        currentPath = Path.of(remoteToLocalLinkCoverter.getImagesBaseLocation().toString(), "backgrounds");
-        if (Files.isDirectory(currentPath)) {
-            try (Stream<Path> paths = Files.walk(currentPath, 1)) {
-                paths
-                        .filter((path) -> Files.isRegularFile(path) && !path.getFileName().toString().endsWith("-preview.png"))
-                        .forEach(((path) -> createBackgroundPreview(path, regenerate)));
-            }
+        for (String link : backgrounds) {
+            createBackgroundPreview(Path.of(link), regenerate);
         }
         System.out.println("Generating of image backgrounds finished");
     }
 
     private void createPreviewOfSkinsInDir(Path path, boolean regenerate) {
         try {
-            try (Stream<Path> paths = Files.walk(path, 1)) {
-                paths
-                        .filter(Files::isDirectory)
-                        .skip(1)
-                        .forEach((skinDirectory) -> {
-                            try {
-                                Path pathToCurrentSkinPreview = Path.of(skinDirectory.toString(), "preview.png");
-                                if (!regenerate && Files.exists(pathToCurrentSkinPreview)) {
-                                    return;
-                                }
-                                BufferedImage skinImage = ImageIO.read(new File(Path.of(skinDirectory.toString(), "image.png").toUri()));
-                                BufferedImage resizedImage = Scalr.resize(skinImage, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 300, Scalr.OP_ANTIALIAS);
-                                File outputfile = new File(pathToCurrentSkinPreview.toUri());
-                                ImageIO.write(resizedImage, "png", outputfile);
-                            } catch (IOException e) {
-                                System.out.println("Creating of preview failed for " + skinDirectory);
-                                System.out.println(e.getMessage());
-                                throw new RuntimeException(e);
-                            }
-                        });
+            Path pathToCurrentSkinPreview = remoteToLocalLinkCoverter.getSkinPreviewLocation(path);
+            if (!regenerate && Files.exists(pathToCurrentSkinPreview)) {
+                return;
             }
-        } catch (Exception ignored) {
+            BufferedImage skinImage = ImageIO.read(new File(path.toUri()));
+            BufferedImage resizedImage = Scalr.resize(skinImage, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 400, Scalr.OP_ANTIALIAS);
+            File outputfile = new File(pathToCurrentSkinPreview.toUri());
+            ImageIO.write(resizedImage, "png", outputfile);
+        } catch (IOException e) {
+            System.out.println("Creating of preview failed for " + path);
+            System.out.println(e.getMessage());
         }
     }
 
     private void createBackgroundPreview(Path path, boolean regenerate) {
         try {
-            Path pathToCurrentBgPreview = Path.of(path.toString() + "-preview.png");
+            Path pathToCurrentBgPreview = remoteToLocalLinkCoverter.getBackgroundPreviewLocation(path);
             if (!regenerate && Files.exists(pathToCurrentBgPreview)) {
                 return;
             }
             BufferedImage skinImage = ImageIO.read(new File(Path.of(path.toString()).toUri()));
-            BufferedImage resizedImage = Scalr.resize(skinImage, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 300, Scalr.OP_ANTIALIAS);
+            BufferedImage resizedImage = Scalr.resize(skinImage, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, 400, Scalr.OP_ANTIALIAS);
             File outputfile = new File(pathToCurrentBgPreview.toUri());
             ImageIO.write(resizedImage, "png", outputfile);
         } catch (IOException e) {

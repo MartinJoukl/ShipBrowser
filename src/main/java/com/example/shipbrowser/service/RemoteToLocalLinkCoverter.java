@@ -23,6 +23,14 @@ public class RemoteToLocalLinkCoverter {
         return possibleImagePath.toString();
     }
 
+    public Path getSkinPreviewLocation(Path originalImagePath){
+        return Path.of(originalImagePath.getParent().toString(), "preview.png");
+    }
+
+    public Path getBackgroundPreviewLocation(Path originalBackgroundPath){
+        return Path.of(originalBackgroundPath.toString() + "-preview.png");
+    }
+
     public String fromLocalToAzurApiImages(String localSource) {
         if (localSource == null) {
             return null;
