@@ -1,6 +1,7 @@
 package com.example.shipbrowser.controller;
 
-import com.example.shipbrowser.model.dto.dtoOut.CreateSKinImagesPreviewsDtoOut;
+import com.example.shipbrowser.model.dto.dtoIn.CreateSkinImagePreviewsDtoIn;
+import com.example.shipbrowser.model.dto.dtoOut.CreateSkinImagesPreviewsDtoOut;
 import com.example.shipbrowser.model.dto.dtoOut.DtoOut;
 import com.example.shipbrowser.repository.Ship;
 import com.example.shipbrowser.repository.Skill;
@@ -45,9 +46,12 @@ public class ImageController {
     }
 
     @PostMapping("createSkinImagesPreviews")
-    public DtoOut createSkinImagesPreviews() throws IOException {
-        storedImageService.createSkinPreviews();
-        return new CreateSKinImagesPreviewsDtoOut("Previews are being generated on background.");
+    public DtoOut createSkinImagesPreviews(@RequestBody CreateSkinImagePreviewsDtoIn dtoIn) throws IOException {
+        if (dtoIn.getRegenerate() == null) {
+            dtoIn.setRegenerate(false);
+        }
+        storedImageService.createSkinPreviews(dtoIn.getRegenerate());
+        return new CreateSkinImagesPreviewsDtoOut("Previews are being generated on background.");
     }
 
     @GetMapping(value = "getShipImage", produces = MediaType.IMAGE_PNG_VALUE)

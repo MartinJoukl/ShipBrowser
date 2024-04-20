@@ -7,6 +7,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
-public class CreateSKinImagesPreviewsDtoOut extends DtoOut{
+public class CreateSkinImagesPreviewsDtoOut extends DtoOut{
     private String message;
 }
