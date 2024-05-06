@@ -1,5 +1,5 @@
 # Ship browser
-TODO img here
+![Enterprise](https://github.com/MartinJoukl/ShipBrowser/assets/100210776/33f4a2d9-c804-40c8-9d55-502285e56be8)
 
 Application is REST api. It's purpose is to provide list of Azur lane ships and their skins and skills.
 
@@ -14,4 +14,4 @@ Work begins by calling command "synchronizeShips" (you have to ligin first by ca
 
 This command synchronizes list of ships, skills and skins with azurApi. It also downloads images from the remove (note: you can download all images from https://github.com/AzurAPI/azurapi-js-setup/tree/master/images as zip and manually put it into ../images to save brandwidth).
 ## DB schema
-TODO img here
+![db_schema](https://github.com/MartinJoukl/ShipBrowser/assets/100210776/7851fbe8-7486-4da6-b7bf-cd5c230460f3)
