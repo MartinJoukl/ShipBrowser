@@ -13,5 +13,7 @@ All api commands are stored in insomnia file - provided in src/test/resources/In
 Work begins by calling command "synchronizeShips" (you have to ligin first by calling login and put retrieved token to bearer).
 
 This command synchronizes list of ships, skills and skins with azurApi. It also downloads images from the remove (note: you can download all images from https://github.com/AzurAPI/azurapi-js-setup/tree/master/images as zip and manually put it into ../images to save brandwidth).
+
+Then /createSkinImagesPreviews should be run (also authorized) which creates low-resolution previews of each skin image of ship.
 ## DB schema
 ![db_schema](https://github.com/MartinJoukl/ShipBrowser/assets/100210776/7851fbe8-7486-4da6-b7bf-cd5c230460f3)
